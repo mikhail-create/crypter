@@ -1,0 +1,29 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.layout {
+    width: 1440px;
+    height: 80px;
+    display: flex;
+    border-bottom: 1px solid #E6E8EC;
+    align-items: center;
+    justify-content: center;
+    padding: 0 160px;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_logo {
+
+        &__image {
+            position: absolute;
+            top: -6px;
+            img {
+                width: 180px;
+            }
+        }
+    }
+}
