@@ -8,22 +8,53 @@ header {
     width: 1440px;
     height: 80px;
     display: flex;
-    border-bottom: 1px solid #E6E8EC;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e8ec;
     padding: 0 160px;
     box-sizing: border-box;
-    flex-direction: row;
-    justify-content: space-between;
 
-    &_logo {
+    &_left {
+        width: fit-content;
+        align-items: center;
+        display: flex;
 
-        &__image {
-            position: absolute;
-            top: -6px;
-            img {
-                width: 180px;
+        gap: 32px;
+
+        .left_logo {
+            &__image {
+                img {
+                    width: 126px;
+                }
             }
+        }
+
+        .left__divider {
+            width: 2px;
+            height: 40px;
+            background-color: #e6e8ec;
+        }
+
+        .left__link {
+            font-family: 'DM Sans';
+            line-height: 16px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #23262F;
+            cursor: pointer;
+        }
+    }
+
+    &_right {
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        .right__buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
         }
     }
 }
