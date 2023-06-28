@@ -30,15 +30,15 @@ header {
         .left--divider {
             width: 2px;
             height: 40px;
-            background-color: $neutral-6;;
+            background-color: $neutral-6;
         }
 
         .left--link {
-            font-family: 'DM Sans';
+            font-family: "DM Sans";
             line-height: 16px;
             font-size: 14px;
             font-weight: bold;
-            color: #23262F;
+            color: #23262f;
             cursor: pointer;
         }
     }
@@ -54,6 +54,21 @@ header {
             display: flex;
             flex-direction: row;
             gap: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-size) {
+    .layout {
+        width: $tablet-size;
+        padding: 0 80px;
+
+        .left--divider {
+            display: none;
+        }
+
+        .left--link {
+            display: none;
         }
     }
 }

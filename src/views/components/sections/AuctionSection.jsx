@@ -2,8 +2,8 @@ import React from 'react'
 import PreviewImage from '../../../assets/image1.png'
 import AvatarImage from '../../../assets/avatar.png'
 import ETHImage from '../../../assets/ETH.png'
-import {ReactComponent as ArrowLeft} from '../../../assets/icons/arrow-left.svg'
-import {ReactComponent as ArrowRight} from '../../../assets/icons/arrow-right.svg'
+import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg'
+import { ReactComponent as ArrowRight } from '../../../assets/icons/arrow-right.svg'
 import Button from '../Button'
 
 
@@ -16,7 +16,7 @@ function AuctionSection() {
             <div className='auction-info'>
                 <div className='auction-info--author'>
                     <div className='auction--title'>
-                        the creator network®
+                        Marco carrillo®
                     </div>
                     <div className='auction-data'>
                         <div className='auction-data--block'>
@@ -82,8 +82,8 @@ function AuctionSection() {
                     </div>
                 </div>
                 <div className="auction-info--buttons">
-                    <Button text="Place a bid" isColored={true} isBiggerFont={false} buttonWidth='100%' buttonHeight='48px'/>
-                    <Button text="View item" isColored={false} isBiggerFont={false} buttonWidth='100%' buttonHeight='48px'/>
+                    <Button text="Place a bid" isColored={true} isBiggerFont={false} buttonWidth='100%' buttonHeight='48px' />
+                    <Button text="View item" isColored={false} isBiggerFont={false} buttonWidth='100%' buttonHeight='48px' />
                 </div>
                 <div className="auction-info-actions">
                     <div className="auction-info-actions--arrow">
