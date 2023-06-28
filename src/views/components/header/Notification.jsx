@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
-import styles from './Notification.module.scss'
 import { ReactComponent as NotificationIcon } from '../../../assets/icons/notification.svg'
 
 function Notification() {
     const [isNotified, setIsNotified] = useState(true);
 
     return (
-        <div className={styles.notification}>
-            {isNotified && <div className={styles.notification__new}></div>}
+        <div className="notification">
+            {isNotified && <div className="notification--new"></div>}
             <NotificationIcon />
         </div>
     )

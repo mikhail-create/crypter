@@ -1,12 +1,11 @@
 import React from 'react'
-import styles from './SearchBar.module.scss'
 import { ReactComponent as SearchIcon } from '../../../assets/icons/search.svg'
 
 function SearchBar() {
     return (
-        <div className={styles.search}>
+        <div className="search">
             <input placeholder='Search' />
-            <div className={styles.search__icon}>
+            <div className="search--icon">
                 <SearchIcon />
             </div>
         </div>

@@ -9,32 +9,31 @@ header {
     height: 80px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #e6e8ec;
+    border-bottom: 1px solid $neutral-6;
     padding: 0 160px;
     box-sizing: border-box;
 
-    &_left {
+    &-left {
         width: fit-content;
         align-items: center;
         display: flex;
-
         gap: 32px;
 
-        .left_logo {
-            &__image {
+        .left-logo {
+            &--image {
                 img {
                     width: 126px;
                 }
             }
         }
 
-        .left__divider {
+        .left--divider {
             width: 2px;
             height: 40px;
-            background-color: #e6e8ec;
+            background-color: $neutral-6;;
         }
 
-        .left__link {
+        .left--link {
             font-family: 'DM Sans';
             line-height: 16px;
             font-size: 14px;
@@ -44,14 +43,14 @@ header {
         }
     }
 
-    &_right {
+    &-right {
         width: fit-content;
         align-items: center;
         display: flex;
         flex-direction: row;
         gap: 24px;
 
-        .right__buttons {
+        .right--buttons {
             display: flex;
             flex-direction: row;
             gap: 12px;
