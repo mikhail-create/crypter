@@ -1,6 +1,6 @@
 .button {
-    width: fit-content;
-    height: fit-content;
+    min-width: fit-content;
+    min-height: fit-content;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -18,5 +18,9 @@
     &--colored {
         background-color: $primary-blue;
         color: $neutral-8;
+    }
+
+    &--bigger {
+        font-size: 16px;
     }
 }

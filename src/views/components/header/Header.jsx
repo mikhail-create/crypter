@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../../assets/logo_horizontal.png'
 import SearchBar from './SearchBar'
 import Notification from './Notification'
-import Button from '../button/Button'
+import Button from '../Button'
 
 function Header() {
     return (
@@ -11,7 +11,7 @@ function Header() {
                 <div className="layout-left">
                     <div className="left-logo">
                         <div className="left-logo--image">
-                            <img srcSet={Logo} />
+                            <img srcSet={Logo} alt='Logo'/>
                         </div>
                     </div>
                     <div className="left--divider" />

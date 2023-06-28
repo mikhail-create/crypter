@@ -10,7 +10,6 @@ function MainLayout() {
             <Header />
             <main>
                 <div className={styles.layout}>
-                    MAIN
                     <Routes>
                         {routes.map(route => (
                             <Route
