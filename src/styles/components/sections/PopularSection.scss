@@ -1,5 +1,5 @@
 .popular {
-    padding: 128px 160px;
+    padding: 128px 88px;
     display: flex;
     flex-direction: column;
 
@@ -8,6 +8,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0 72px;
 
         &--category {
             > span {
@@ -70,6 +71,35 @@
         margin-top: 64px;
         display: flex;
         flex-direction: row;
-        gap: 32px;
+        box-sizing: border-box;
+
+        &--control {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            margin-top: 112px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $neutral-6;
+            cursor: pointer;
+
+            &:first-of-type {
+                margin-right: 1220px;
+            }
+
+            &:last-of-type {
+                margin-left: 1220px;
+            }
+        }
+
+        &--list {
+            padding: 0 72px;
+            display: flex;
+            flex-direction: row;
+            gap: 32px;
+            transition: transform 0.5s ease;
+        }
     }
 }
