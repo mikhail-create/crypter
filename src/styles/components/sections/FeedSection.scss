@@ -4,10 +4,133 @@
     display: flex;
     flex-direction: row;
 
+    &--wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
     &--list {
         margin-left: 32px;
         display: flex;
         flex-direction: column;
         gap: 32px;
+    }
+
+    &-latest {
+        margin-left: 32px;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid $neutral-6;
+        padding-left: 32px;
+
+        &--title {
+            color: $neutral-4;
+            font-family: "Poppins";
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 500;
+        }
+    }
+}
+
+.creator-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 224px;
+    height: 104px;
+    border-bottom: 1px solid $neutral-6;
+
+    &:last-of-type {
+        border-bottom: none;
+        margin-bottom: 8px;
+    }
+
+    &--profile {
+        display: flex;
+        flex-direction: row;
+        width: 56px;
+        height: 56px;
+    }
+
+    &--amount {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: $neutral-2;
+        color: $neutral-8;
+        box-sizing: border-box;
+        border: 2px solid $neutral-8;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        margin-top: -4px;
+        margin-right: -4px;
+    }
+
+    &-info {
+        margin-left: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        &--name {
+            color: $neutral-2;
+            font-family: "Poppins";
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 500;
+        }
+
+        &--wallet {
+            color: $neutral-3;
+            font-family: "Poppins";
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 500;
+
+            > span {
+                color: $neutral-4;
+                font-family: "Poppins";
+                font-size: 12px;
+                line-height: 20px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $tablet-size) {
+    .feed {
+        width: 100%;
+        padding: 0 80px 80px 80px;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        &--wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-latest {
+            border: none;
+            margin-top: 64px;
+            margin-left: 0;
+            padding-left: 0;
+
+            &--list {
+                display: flex;
+                flex-direction: row;
+            }
+
+            &--btn {
+                display: none;
+            }
+        }
+    }
+
+    .creator-card {
+        border: none;
     }
 }
