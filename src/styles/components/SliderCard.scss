@@ -3,12 +3,12 @@
     padding: 24px;
     width: 198px;
     height: 247px;
+    margin-bottom: 64px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    transition: height 1s ease,  box-shadow 1s ease;
-
+    transition: height 1s ease, box-shadow 1s ease, margin-bottom 1s ease;
 
     &--header {
         display: flex;
@@ -22,6 +22,7 @@
         height: 24px;
         border-radius: 24px;
         margin-right: 43px;
+        padding: 0 8px;
         color: $neutral-8;
         font-family: "Poppins";
         font-weight: 600;
@@ -50,7 +51,7 @@
     &--action {
         cursor: pointer;
         display: flex;
-        gap: 10px;
+        gap: 8px;
     }
 
     &--divider {
@@ -107,10 +108,11 @@
     }
 
     &:hover {
-        box-shadow: 0px 32px 64px 32px rgba(31,47,70,0.12);
+        box-shadow: 0px 32px 64px 32px rgba(31, 47, 70, 0.12);
         height: 263px;
+        margin-bottom: 48px;
 
-        .slider-card-user--wrapper{
+        .slider-card-user--wrapper {
             transform: scale(1.25);
             margin-bottom: 32px;
         }

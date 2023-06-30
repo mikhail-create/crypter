@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import Carousel from 'react-elastic-carousel'
 import { ReactComponent as ArrowDown } from '../../../assets/icons/arrow-down.svg'
 import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg'
 import { ReactComponent as ArrowRight } from '../../../assets/icons/arrow-right.svg'
 import SliderCard from '../SliderCard'
 
 function PopularSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const carouselRef = useRef(null);
 
     const slides = [
         <SliderCard rank={1} name='Edd Harris' wallet={2.456} />,
@@ -21,14 +22,12 @@ function PopularSection() {
     ]
 
     const handlePrevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 5 : prevIndex - 1));
+        carouselRef.current.slidePrev();
     };
 
     const handleNextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === slides.length - 5 ? 0 : prevIndex + 1));
+        carouselRef.current.slideNext();
     };
-
-    const visibleSlides = slides.slice(currentIndex, currentIndex + 5);
 
     return (
         <section className='popular'>
@@ -57,15 +56,23 @@ function PopularSection() {
                 <button className='popular-slider--control' onClick={handlePrevSlide}>
                     <ArrowLeft />
                 </button>
-                <div id='slider-list' className='popular-slider--list'>
-                    {visibleSlides.map((slide, index) => (
-                        <div
-                            key={index}
-                            className={`slider--item ${index === 0 ? 'active' : ''}`}
-                        >
-                            {slide}
-                        </div>
-                    ))}
+                <div className='popular-slider--list'>
+                    <Carousel
+                        itemsToShow={5}
+                        pagination={false}
+                        ref={carouselRef}
+                        showArrows={false}
+                        itemPadding={[0, 32, 0, 32]}
+                    >
+                        {slides.map((slide, index) => (
+                            <div
+                                key={index}
+                                className={`slider--item ${index === 0 ? 'active' : ''}`}
+                            >
+                                {slide}
+                            </div>
+                        ))}
+                    </Carousel>
                 </div>
                 <button className='popular-slider--control' onClick={handleNextSlide}>
                     <ArrowRight />

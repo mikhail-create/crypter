@@ -1,0 +1,54 @@
+.hotbid {
+    padding: 136px 160px 128px 160px;
+
+    &-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 64px;
+
+        &--title {
+            color: $neutral-2;
+            font-family: "DM Sans";
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 48px;
+            letter-spacing: -1%;
+        }
+
+        &--control {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+
+        &--arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $neutral-6;
+            cursor: pointer;
+        }
+    }
+
+    &--list {
+
+    }
+
+    .rec .rec-slider-container {
+        margin: 0;
+    }
+
+    .rec .rec-item-wrapper {
+        justify-content: flex-start;
+        width: 100% !important; 
+    }
+
+    .rec .rec-swipable {
+        gap: 32px;
+    }
+}
