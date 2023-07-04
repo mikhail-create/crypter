@@ -15,13 +15,13 @@ function SliderCard({ rank, name, wallet }) {
                 {(() => {
                     switch (rank) {
                         case 1:
-                            return <div className='slider-card--rank slider-card--rank1'><Cup />#{rank}</div>;
+                            return <div className='slider-card--rank slider-card--rank1 font-caption--2-bold'><Cup />#{rank}</div>;
                         case 2:
-                            return <div className='slider-card--rank slider-card--rank2'><Donut />#{rank}</div>;
+                            return <div className='slider-card--rank slider-card--rank2 font-caption--2-bold'><Donut />#{rank}</div>;
                         case 3:
-                            return <div className='slider-card--rank slider-card--rank3'><Lightning />#{rank}</div>;
+                            return <div className='slider-card--rank slider-card--rank3 font-caption--2-bold'><Lightning />#{rank}</div>;
                         default:
-                            return <div className='slider-card--rank'><Doughnut />#{rank}</div>;
+                            return <div className='slider-card--rank font-caption--2-bold'><Doughnut />#{rank}</div>;
                     }
                 })()}
                 <div className='slider-card--action'>
@@ -37,14 +37,11 @@ function SliderCard({ rank, name, wallet }) {
                         <Verified />
                     </div>
                 </div>
-                <div className='slider-card-user--name'>
+                <div className='slider-card-user--name font-caption--1-bold'>
                     {name}
                 </div>
-                <div className='slider-card-user--wallet'>
-                    {wallet + ' '}
-                    <span>
-                        ETH
-                    </span>
+                <div className='slider-card-user--wallet font-caption--2-bold'>
+                    {wallet}
                 </div>
             </div>
         </div>

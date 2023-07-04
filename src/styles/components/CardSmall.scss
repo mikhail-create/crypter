@@ -16,10 +16,6 @@
 
         &--title {
             color: $neutral-2;
-            font-family: "Poppins";
-            font-size: 16px;
-            line-height: 24px;
-            font-weight: 500;
         }
 
         &--data {
@@ -27,7 +23,6 @@
             flex-direction: row;
             align-items: center;
             margin-top: 8px;
-            font-family: "Poppins";
             gap: 11px;
             margin-bottom: 16px;
 
@@ -43,9 +38,6 @@
                 border: 2px solid $primary-green;
                 border-radius: 4px;
                 color: $primary-green;
-                font-size: 12px;
-                line-height: 12px;
-                font-weight: bold;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -53,9 +45,6 @@
 
             > span {
                 color: $neutral-4;
-                font-size: 12px;
-                line-height: 20px;
-                font-weight: 400;
                 text-align: center;
             }
         }

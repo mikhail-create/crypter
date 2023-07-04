@@ -15,10 +15,10 @@ function Header() {
                         </div>
                     </div>
                     <div className="left--divider" />
-                    <div className="left--link">
+                    <div className="left--link font-button font-button--2">
                         Discover
                     </div>
-                    <div className="left--link">
+                    <div className="left--link font-button font-button--2">
                         How it work
                     </div>
                 </div>

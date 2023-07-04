@@ -18,9 +18,9 @@ function HotBidSection() {
     return (
         <div className='hotbid'>
             <div className='hotbid-header'>
-                <span className='hotbid-header--title'>
+                <h3 className='hotbid-header--title font-headline--3'>
                     Hot bid
-                </span>
+                </h3>
                 <div className='hotbid-header--control'>
                     <button className='hotbid-header--arrow' onClick={handlePrevSlide}>
                         <ArrowLeft />

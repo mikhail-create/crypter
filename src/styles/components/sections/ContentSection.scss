@@ -7,21 +7,13 @@
     justify-content: flex-end;
 
     &--subtitle {
-        font-family: 'Poppins';
         color: $neutral-4;
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 12px;
         margin-bottom: 8px;
         text-transform: uppercase;
     }
 
     &--title {
-        font-family: 'DM Sans';
         color: $neutral-2;
-        font-weight: bold;
-        font-size: 40px;
-        line-height: 48px;
         margin-bottom: 24px;
     }
 }

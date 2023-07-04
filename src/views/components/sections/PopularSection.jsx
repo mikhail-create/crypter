@@ -33,19 +33,19 @@ function PopularSection() {
         <section className='popular'>
             <div className='popular-header'>
                 <div className='popular-header--category'>
-                    <span>
+                    <span className='font-body--1-bold'>
                         Popular
                     </span>
-                    <div>
+                    <div className='font-headline--3'>
                         Sellers
                         <ArrowDown className='arrow-down' />
                     </div>
                 </div>
                 <div className="popular-header-select">
-                    <select>
-                        <option value="">Today</option>
-                        <option value="">Week</option>
-                        <option value="">Month</option>
+                    <select className='font-caption--1-bold'>
+                        <option value="today">Today</option>
+                        <option value="week">Week</option>
+                        <option value="month">Month</option>
                     </select>
                     <div className='popular-header-select--arrow'>
                         <ArrowDown />

@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+.font {
+    &--hero {
+        font-family: 'DM Sans';
+        font-size: 96px;
+        line-height: 96px;
+        font-weight: bold;
+        letter-spacing: -1.92px;
+    }
+
+    &-headline {
+        font-family: 'DM Sans';
+        font-weight: bold;
+
+        &--1 {
+            @extend .font-headline;
+            font-size: 64px;
+            line-height: 64px;
+            letter-spacing: -1.28px;
+        }
+    
+        &--2 {
+            @extend .font-headline;
+            font-size: 48px;
+            line-height: 56px;
+            letter-spacing: -0.96px;
+        }
+    
+        &--3 {
+            @extend .font-headline;
+            font-size: 40px;
+            line-height: 48px;
+            letter-spacing: -0.4px;
+        }
+    
+        &--4 {
+            @extend .font-headline;
+            font-size: 32px;
+            line-height: 40px;
+            letter-spacing: -0.32px;
+        }
+    }
+
+    &-body {
+        font-family: 'Poppins';
+        
+        &--1 {
+            @extend .font-body;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: -0.24px;
+            font-weight: 400;
+
+            &-bold {
+                @extend .font-body--1;
+                letter-spacing: 0;
+                font-weight: 600;  
+            }
+        }
+
+        &--2 {
+            @extend .font-body;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+
+            &-bold {
+                @extend .font-body--2;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-caption {
+        font-family: 'Poppins';
+
+        &--1 {
+            @extend .font-caption;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+
+            &-bold {
+                @extend .font-caption--1;
+                font-weight: 500;
+            }
+        }
+
+        &--2 {
+            @extend .font-caption;
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 400;
+
+            &-bold {
+                @extend .font-caption--2;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &-hairline {
+        font-family: 'Poppins';
+        font-weight: 700;
+
+        &--1 {
+            @extend .font-hairline;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        &--2 {
+            @extend .font-hairline;
+            font-size: 12px;
+            line-height: 12px;
+        }
+    }
+
+    &-button {
+        font-family: 'DM Sans';
+        font-weight: 700;
+
+        &--1 {
+            @extend .font-button;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        &--2 {
+            @extend .font-button;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react'
-import NftImage from '../../../assets/NFT-1.png'
-import AvatarImage from '../../../assets/avatar.png'
+import NftImage from '../../assets/NFT-1.png'
+import AvatarImage from '../../assets/avatar.png'
 
 function CollectionItem({ title, itemsAmount, author }) {
     return (
@@ -13,17 +13,17 @@ function CollectionItem({ title, itemsAmount, author }) {
                     <img className='collectionitem-images--item' srcSet={NftImage} />
                 </div>
             </div>
-            <span className='collectionitem--title'>
+            <span className='collectionitem--title font-body--1-bold'>
                 {title}
             </span>
             <div className='collectionitem-info'>
                 <div className='collectionitem-info-user'>
                     <img  className='collectionitem-info--avatar' srcSet={AvatarImage} alt='Avatar Image' />
-                    <span className='collectionitem-info--author'>
+                    <span className='collectionitem-info--author font-caption--1-bold'>
                         {'by ' + author}
                     </span>
                 </div>
-                <span className='collectionitem-info--amount'>
+                <span className='collectionitem-info--amount font-hairline--2'>
                     {itemsAmount + ' items'}
                 </span>
             </div>

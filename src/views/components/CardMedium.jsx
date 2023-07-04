@@ -28,7 +28,7 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
                 isHovered &&
                 <div className='card-hover' >
                     <div className='card-hover--header'>
-                        <span className='card-hover--indicator'>
+                        <span className='card-hover--indicator font-hairline--2'>
                             purchasing !
                         </span>
                         <button className='card-hover--like'>
@@ -48,10 +48,10 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
             <img srcSet={NftImage} alt={title + ' Nft Image'} />
             <div className='card-medium-description'>
                 <div className='stats'>
-                    <span className='stats--title'>
+                    <span className='stats--title font-body--2-bold'>
                         {title}
                     </span>
-                    <div className='stats--price'>
+                    <div className='stats--price font-hairline--2'>
                         {instaPrice + ' ETH'}
                     </div>
                 </div>
@@ -61,7 +61,7 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
                         <img srcSet={AvatarImage01} />
                         <img srcSet={AvatarImage02} />
                     </div>
-                    <span className='stats--stock'>
+                    <span className='stats--stock font-caption--1-bold'>
                         {stockAmount + ' in stock'}
                     </span>
                 </div>
@@ -69,14 +69,14 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
                 <div className='stats'>
                     <div className='stats-highest'>
                         <CandlesticksUp />
-                        <span className='stats-highest--label'>
+                        <span className='stats-highest--label font-caption--2'>
                             Highest bid
                         </span>
-                        <span className='stats-highest--bid'>
+                        <span className='stats-highest--bid font-caption--2-bold'>
                             {bid + ' ETH'}
                         </span>
                     </div>
-                    <div className='stats--indicator'>
+                    <div className='stats--indicator font-caption--2'>
                         {isNewBids && 'New bid 🔥'}
                     </div>
                 </div>

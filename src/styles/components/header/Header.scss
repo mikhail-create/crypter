@@ -34,11 +34,7 @@ header {
         }
 
         .left--link {
-            font-family: "DM Sans";
-            line-height: 16px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #23262f;
+            color: $neutral-2;
             cursor: pointer;
         }
     }

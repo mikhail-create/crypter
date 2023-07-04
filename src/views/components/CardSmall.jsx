@@ -8,15 +8,15 @@ function CardSmall({ title, price, amount }) {
         <div className='card-small'>
             <img srcSet={NftImage} alt='Nft Image' />
             <div className='card-small-info'>
-                <span className='card-small-info--title'>
+                <span className='card-small-info--title font-body--2-bold'>
                     {title}
                 </span>
                 <div className='card-small-info--data'>
                     <img srcSet={AvatarImage} alt='Avatar' />
-                    <div>
+                    <div className='font-hairline--2'>
                         {price} ETH
                     </div>
-                    <span>
+                    <span className='font-caption--1'>
                         1 of {amount}
                     </span>
                 </div>

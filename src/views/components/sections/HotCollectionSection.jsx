@@ -1,12 +1,12 @@
 import React from 'react'
-import CollectionItem from './CollectionItem'
+import CollectionItem from '../CollectionItem'
 
 function HotCollectionSection() {
     return (
         <div className='hotsection'>
-            <span className='hotsection--title'>
+            <h3 className='hotsection--title font-headline--3'>
                 Hot collections
-            </span>
+            </h3>
             <div className='hotsection--list'>
                 <CollectionItem title='Awesome collection' author='Kennith Olson' itemsAmount={28} />
                 <CollectionItem title='Awesome collection' author='Kennith Olson' itemsAmount={28} />

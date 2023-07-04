@@ -26,10 +26,6 @@
 
         &--title {
             color: $neutral-4;
-            font-family: "Poppins";
-            font-size: 12px;
-            line-height: 20px;
-            font-weight: 500;
         }
     }
 }
@@ -64,8 +60,6 @@
         border: 2px solid $neutral-8;
         border-radius: 100%;
         text-align: center;
-        font-size: 12px;
-        line-height: 20px;
         margin-top: -4px;
         margin-right: -4px;
     }
@@ -78,25 +72,15 @@
 
         &--name {
             color: $neutral-2;
-            font-family: "Poppins";
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 500;
         }
 
         &--wallet {
             color: $neutral-3;
-            font-family: "Poppins";
-            font-size: 12px;
-            line-height: 20px;
-            font-weight: 500;
 
-            > span {
+            &::after {
+                @extend .font-caption--2;
                 color: $neutral-4;
-                font-family: "Poppins";
-                font-size: 12px;
-                line-height: 20px;
-                font-weight: 500;
+                content: ' ETH';
             }
         }
     }

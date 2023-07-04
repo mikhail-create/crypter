@@ -9,19 +9,16 @@ const LatestCreator = ({ name, wallet, amount }) => {
         <div className='creator-card'>
             <div className='creator-card--profile'>
                 <img srcSet={AvatarImage} alt='Avatar' />
-                <div className='creator-card--amount'>
+                <div className='creator-card--amount font-caption--2-bold'>
                     {amount}
                 </div>
             </div>
             <div className='creator-card-info'>
-                <div className="creator-card-info--name">
+                <div className="creator-card-info--name font-caption--1-bold">
                     {name}
                 </div>
-                <div className="creator-card-info--wallet">
-                    {wallet + ' '}
-                    <span>
-                        ETH
-                    </span>
+                <div className="creator-card-info--wallet font-caption--2-bold">
+                    {wallet}
                 </div>
             </div>
         </div >
@@ -40,7 +37,7 @@ function FeedSection() {
                 </div>
             </div>
             <div className="feed-latest">
-                <span className="feed-latest--title">
+                <span className="feed-latest--title font-caption--2-bold">
                     Latest upload from creators 🔥
                 </span>
                 <div className='feed-latest--list'>

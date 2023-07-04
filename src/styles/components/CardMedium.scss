@@ -29,10 +29,6 @@
             background-color: $primary-green;
             color: $neutral-8;
             text-transform: uppercase;
-            font-family: 'Poppins';
-            font-size: 12px;
-            line-height: 12px;
-            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,20 +73,13 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            font-family: "Poppins";
 
             &--title {
                 color: $neutral-2;
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 500;
             }
 
             &--price {
                 color: $primary-green;
-                font-size: 12px;
-                line-height: 12px;
-                font-weight: bold;
                 padding: 4px 6px;
                 border-radius: 4px;
                 border: 2px solid $primary-green;
@@ -121,10 +110,6 @@
 
             &--stock {
                 color: $neutral-3;
-                font-family: "Poppins";
-                font-size: 14px;
-                line-height: 24px;
-                font-weight: 500;
             }
 
             &-highest {
@@ -132,27 +117,18 @@
                 flex-direction: row;
                 align-items: center;
                 gap: 4px;
-                font-family: "Poppins";
-                font-size: 12px;
-                line-height: 20px;
 
                 &--label {
                     color: $neutral-4;
-                    font-weight: 400;
                 }
 
                 &--bid {
                     color: $neutral-3;
-                    font-weight: 600;
                 }
             }
 
             &--indicator {
-                font-family: "Poppins";
-                font-size: 12px;
-                line-height: 20px;
                 color: $neutral-4;
-                font-weight: 400;
             }
         }
     }

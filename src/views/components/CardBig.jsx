@@ -9,18 +9,18 @@ function CardBig() {
             <div className='card-big-info'>
                 <img srcSet={AvatarImage} alt='Avatar' />
                 <div className='card-big-info--title'>
-                    <span>
+                    <span className='font-body--1-bold'>
                         The future of ETH®
                     </span>
-                    <span>
+                    <span className='font-caption--1-bold'>
                         18 in stock
                     </span>
                 </div>
                 <div className='card-big-info--price'>
-                    <span>
+                    <span className='font-caption--2'>
                         Highest bid
                     </span>
-                    <div>
+                    <div className='font-hairline--2'>
                         1.125 ETH
                     </div>
                 </div>

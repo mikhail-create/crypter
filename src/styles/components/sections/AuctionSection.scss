@@ -24,12 +24,7 @@
 
         &--author {
             .auction--title {
-                font-family: "DM Sans";
-                font-weight: bold;
                 color: $neutral-2;
-                font-size: 64px;
-                line-height: 64px;
-                letter-spacing: -2%;
                 margin-bottom: 20px;
             }
 
@@ -43,23 +38,21 @@
                     flex-direction: row;
                     align-items: center;
 
+                    > img {
+                        width: 40px;
+                    }
+
                     &--info {
                         display: flex;
                         flex-direction: column;
                         margin-left: 8px;
-                        font-family: "Poppins";
 
                         .subtitle {
                             color: $neutral-4;
-                            font-size: 12px;
-                            line-height: 20px;
                         }
 
                         .title {
                             color: $neutral-2;
-                            font-size: 14px;
-                            line-height: 24px;
-                            font-weight: 500;
                         }
                     }
                 }
@@ -82,27 +75,14 @@
 
                 &--title {
                     color: $neutral-2;
-                    font-family: "Poppins";
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 24px;
                 }
 
                 &--amount {
                     color: $neutral-1;
-                    font-family: "DM Sans";
-                    font-weight: bold;
-                    font-size: 48px;
-                    line-height: 56px;
-                    letter-spacing: -2px;
                 }
 
                 &--currency {
                     color: $neutral-4;
-                    font-family: "Poppins";
-                    font-weight: 500;
-                    font-size: 24px;
-                    line-height: 32px;
                 }
             }
 
@@ -113,11 +93,6 @@
 
                 &--title {
                     color: $neutral-2;
-                    font-family: "Poppins";
-                    font-weight: 500;
-                    font-size: 16px;
-                    line-height: 24px;
-                    margin-bottom: 8px;
                 }
 
                 &-ending {
@@ -129,25 +104,16 @@
 
                     &--now {
                         color: $neutral-1;
-                        font-family: "DM Sans";
                         width: 64px;
                         height: 40px;
                         text-align: center;
-                        font-size: 32px;
-                        line-height: 40px;
-                        letter-spacing: -1%;
-                        font-weight: bold;
                     }
 
                     &--subtitle {
                         color: $neutral-4;
-                        font-family: "Poppins";
                         width: 64px;
                         height: 24px;
                         text-align: center;
-                        font-weight: 500;
-                        font-size: 16px;
-                        line-height: 24px;
                     }
                 }
             }
