@@ -1,5 +1,6 @@
 .hotbid {
     padding: 136px 160px 128px 160px;
+    box-sizing: border-box;
 
     &-header {
         display: flex;
@@ -33,10 +34,6 @@
             border: 2px solid $neutral-6;
             cursor: pointer;
         }
-    }
-
-    &--list {
-
     }
 
     .rec .rec-slider-container {

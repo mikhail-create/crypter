@@ -4,6 +4,7 @@ import AuctionSection from '../components/sections/AuctionSection'
 import FeedSection from '../components/sections/FeedSection'
 import PopularSection from '../components/sections/PopularSection'
 import HotBidSection from '../components/sections/HotBidSection'
+import HotCollectionSection from '../components/sections/HotCollectionSection'
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
         <FeedSection />
         <PopularSection />
         <HotBidSection />
+        <HotCollectionSection />
     </div>
   )
 }
