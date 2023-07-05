@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
 
-function DropDown({ title, items }) {
+function DropDown({items }) {
     const [label, setLabel] = useState(items[0]);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     

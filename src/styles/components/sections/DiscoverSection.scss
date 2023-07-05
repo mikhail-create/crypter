@@ -5,4 +5,22 @@
     &--title {
         margin-bottom: 80px;
     }
+
+    &-category {
+        display: flex;
+        flex-direction: row;
+
+        &--filter {
+            width: 180px;
+            margin-right: 132.5px;
+        }
+
+        &--navigation {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+            margin-right: 197.5px;
+        }
+    }
 }
