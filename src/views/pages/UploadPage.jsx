@@ -1,8 +1,11 @@
 import React from 'react'
+import CustomLabel from 'views/components/shared/CustomLabel'
 
 function UploadPage() {
   return (
-    <div>UploadPage</div>
+    <div>
+        <CustomLabel text='Default' isComingGhost={true}/>
+    </div>
   )
 }
 
