@@ -6,6 +6,7 @@ import AvatarImage01 from 'assets/avatar-01.png';
 import AvatarImage02 from 'assets/avatar-02.png';
 import { ReactComponent as CandlesticksUp } from 'assets/icons/candlesticks-up.svg';
 import { ReactComponent as Heart } from 'assets/icons/heart.svg';
+import CustomLabel from 'views/components/shared/CustomLabel';
 
 function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
     const [isHovered, setIsHovered] = useState(false)
@@ -52,7 +53,7 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
                         {title}
                     </span>
                     <div className='stats--price font-hairline--2'>
-                        {instaPrice + ' ETH'}
+                        <CustomLabel text={instaPrice + ' ETH'} isPopularGhost={true} />
                     </div>
                 </div>
                 <div className='stats'>

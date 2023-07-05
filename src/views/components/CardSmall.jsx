@@ -2,6 +2,7 @@ import React from 'react';
 import NftImage from 'assets/NFT-1.png';
 import AvatarImage from 'assets/avatar.png';
 import Button from 'views/components/shared/Button';
+import CustomLabel from 'views/components/shared/CustomLabel';
 
 function CardSmall({ title, price, amount }) {
     return (
@@ -14,7 +15,7 @@ function CardSmall({ title, price, amount }) {
                 <div className='card-small-info--data'>
                     <img srcSet={AvatarImage} alt='Avatar' />
                     <div className='font-hairline--2'>
-                        {price} ETH
+                        <CustomLabel text={price + ' ETH'} isPopularGhost={true} />
                     </div>
                     <span className='font-caption--1'>
                         1 of {amount}

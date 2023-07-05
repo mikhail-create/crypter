@@ -43,18 +43,6 @@
                 color: $neutral-4;
                 text-align: center;
             }
-
-            > div {
-                width: 68px;
-                height: 26px;
-                box-sizing: border-box;
-                border: 2px solid $primary-green;
-                border-radius: 4px;
-                color: $primary-green;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
         }
     }
 }

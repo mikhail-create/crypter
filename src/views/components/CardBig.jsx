@@ -1,6 +1,7 @@
 import React from 'react'
 import NftImage from 'assets/NFT-1.png'
 import AvatarImage from 'assets/avatar.png'
+import CustomLabel from 'views/components/shared/CustomLabel'
 
 function CardBig() {
     return (
@@ -21,7 +22,7 @@ function CardBig() {
                         Highest bid
                     </span>
                     <div className='font-hairline--2'>
-                        1.125 ETH
+                        <CustomLabel text='1.125 ETH' isPopularGhost={true} />
                     </div>
                 </div>
             </div>

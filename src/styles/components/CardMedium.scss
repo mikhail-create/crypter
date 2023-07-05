@@ -78,14 +78,6 @@
                 color: $neutral-2;
             }
 
-            &--price {
-                color: $primary-green;
-                padding: 4px 6px;
-                border-radius: 4px;
-                border: 2px solid $primary-green;
-                box-sizing: border-box;
-            }
-
             &--bidders {
                 display: flex;
                 flex-direction: row;
