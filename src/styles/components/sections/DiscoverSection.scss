@@ -9,6 +9,7 @@
     &-category {
         display: flex;
         flex-direction: row;
+        margin-bottom: 32px;
 
         &--filter {
             width: 180px;
@@ -21,6 +22,40 @@
             gap: 12px;
             align-items: center;
             margin-right: 197.5px;
+        }
+    }
+
+    &--divider {
+        width: 100%;
+        height: 1px;
+        background-color: $neutral-6;
+        margin-bottom: 32px;
+    }
+
+    &-filters {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-column-gap: 32px;
+        grid-row-gap: 12px;
+
+        > label {
+            color: $neutral-5;
+            height: 12px;
+        }
+    }
+
+    &-list {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        &--button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
     }
 }

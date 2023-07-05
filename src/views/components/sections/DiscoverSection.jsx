@@ -1,16 +1,194 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CardMedium from 'views/components/CardMedium';
 import Button from 'views/components/shared/Button';
 import DropDown from 'views/components/shared/DropDown';
 import NavItem from 'views/components/shared/NavItem';
+import RangeBar from 'views/components/shared/RangeBar';
 
 function DiscoverSection() {
+    // Массив тестовых карточек для заполнения
+    const testItems = [
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+        <CardMedium
+            title='Amazing digital art'
+            instaPrice={2.45}
+            stockAmount={3}
+            bid={0.001}
+            isNewBids={true}
+        />,
+    ]
+    const [displayedItems, setDisplayedItems] = useState([]);
+    const [lastLoadedIndex, setLastLoadedIndex] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        // Загрузка первых 8 карточек
+        const itemsPerPage = 8;
+        const nextItems = testItems.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
+        setDisplayedItems(nextItems);
+        setLastLoadedIndex(lastLoadedIndex + itemsPerPage);
+    }, []);
+
+    const loadMoreItems = () => {
+        if (isLoading) {
+            return;
+        }
+
+        setIsLoading(true);
+
+        setTimeout(() => {
+            const itemsPerPage = 8;
+            const nextItems = testItems.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
+            setDisplayedItems(prevItems => [...prevItems, ...nextItems]);
+            setLastLoadedIndex(prevIndex => prevIndex + itemsPerPage);
+            setIsLoading(false);
+        }, 500); // Задержка в 0.5 секунды
+    };
+
+
+    const [sliderValue, setSliderValue] = useState(5);
     const [category, setCategory] = useState('All items');
 
     const handleCategoryChange = (newCategory) => {
         if (category === 'All items' && newCategory === 'All items') { }
         else if (category === newCategory) { setCategory('All items') }
         else { setCategory(newCategory) }
+    };
+
+    const handleSliderChange = (newValue) => {
+        setSliderValue(newValue);
     };
 
     return (
@@ -31,9 +209,37 @@ function DiscoverSection() {
                 <Button text='Filter' isColored={true} buttonWidth={116} />
             </div>
             <div className="discover--divider"></div>
-            <div className="discover-filters"></div>
-            <div className="discover-list"></div>
-        </section>
+            <div className="discover-filters">
+                <label className='font-hairline--2'>
+                    Price
+                </label>
+                <label className='font-hairline--2'>
+                    Likes
+                </label>
+                <label className='font-hairline--2'>
+                    Creator
+                </label>
+                <label className='font-hairline--2'>
+                    Price range
+                </label>
+                <DropDown items={['Highest price', 'Lowest price', 'Popular', 'Newest']} />
+                <DropDown items={['Most liked', 'Least liked']} />
+                <DropDown items={['Verified only', 'All creators', 'Newest creators']} />
+                <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
+            </div>
+            <div className="discover-list">
+                {displayedItems.map((item, index) => (
+                    <div key={index}>{item}</div>
+                ))}
+                <div onClick={loadMoreItems} className="discover-list--button">
+                    {
+                        !isLoading ? <Button text='Load more' /> : <Button text='Loading...' />
+                    }
+
+                </div>
+            </div>
+
+        </section >
     );
 }
 

@@ -4,6 +4,7 @@ import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
 import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
 import SliderCard from '../SliderCard';
+import DropDown from 'views/components/shared/DropDown';
 
 function PopularSection() {
     const carouselRef = useRef(null);
@@ -42,14 +43,7 @@ function PopularSection() {
                     </div>
                 </div>
                 <div className="popular-header-select">
-                    <select className='font-caption--1-bold'>
-                        <option value="today">Today</option>
-                        <option value="week">Week</option>
-                        <option value="month">Month</option>
-                    </select>
-                    <div className='popular-header-select--arrow'>
-                        <ArrowDown />
-                    </div>
+                    <DropDown items={['Today', 'Week']} />
                 </div>
             </div>
             <div className='popular-slider'>
