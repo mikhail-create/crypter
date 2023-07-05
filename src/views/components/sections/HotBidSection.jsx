@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Carousel from 'react-elastic-carousel'
-import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg'
-import { ReactComponent as ArrowRight } from '../../../assets/icons/arrow-right.svg'
+import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg'
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
 import CardMedium from '../CardMedium'
 
 function HotBidSection() {

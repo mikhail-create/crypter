@@ -9,7 +9,9 @@
 @import './sections/HotBidSection.scss';
 @import './sections/HotCollectionSection.scss';
 
-@import './Button.scss';
+@import './shared/Button.scss';
+@import './shared/CustomLabel.scss';
+
 @import './CardBig.scss';
 @import './CardSmall.scss';
 @import './SliderCard.scss';

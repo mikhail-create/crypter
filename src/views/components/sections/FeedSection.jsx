@@ -1,8 +1,8 @@
-import React from 'react'
-import CardBig from '../CardBig'
-import CardSmall from '../CardSmall'
-import AvatarImage from '../../../assets/avatar.png'
-import Button from '../Button'
+import React from 'react';
+import CardBig from 'views/components/CardBig';
+import CardSmall from 'views/components/CardSmall';
+import AvatarImage from 'assets/avatar.png';
+import Button from 'views/components/shared/Button';
 
 const LatestCreator = ({ name, wallet, amount }) => {
     return (

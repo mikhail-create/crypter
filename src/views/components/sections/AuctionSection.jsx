@@ -1,10 +1,10 @@
 import React from 'react'
-import PreviewImage from '../../../assets/image1.png'
-import AvatarImage from '../../../assets/avatar.png'
-import ETHImage from '../../../assets/ETH.png'
-import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg'
-import { ReactComponent as ArrowRight } from '../../../assets/icons/arrow-right.svg'
-import Button from '../Button'
+import PreviewImage from 'assets/image1.png'
+import AvatarImage from 'assets/avatar.png'
+import ETHImage from 'assets/ETH.png'
+import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg'
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
+import Button from 'views/components/shared/Button';
 
 
 function AuctionSection() {

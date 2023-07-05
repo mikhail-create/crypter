@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import Carousel from 'react-elastic-carousel'
-import { ReactComponent as ArrowDown } from '../../../assets/icons/arrow-down.svg'
-import { ReactComponent as ArrowLeft } from '../../../assets/icons/arrow-left.svg'
-import { ReactComponent as ArrowRight } from '../../../assets/icons/arrow-right.svg'
-import SliderCard from '../SliderCard'
+import Carousel from 'react-elastic-carousel';
+import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
+import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
+import SliderCard from '../SliderCard';
 
 function PopularSection() {
     const carouselRef = useRef(null);

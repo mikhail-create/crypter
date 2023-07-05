@@ -1,8 +1,8 @@
 import React from 'react'
-import Logo from '../../../assets/logo_horizontal.png'
+import Logo from 'assets/logo_horizontal.png'
 import SearchBar from './SearchBar'
 import Notification from './Notification'
-import Button from '../Button'
+import Button from 'views/components/shared/Button'
 
 function Header() {
     return (

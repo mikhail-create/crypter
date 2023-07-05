@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ReactComponent as NotificationIcon } from '../../../assets/icons/notification.svg'
+import { ReactComponent as NotificationIcon } from 'assets/icons/notification.svg'
 
 function Notification() {
     const [isNotified, setIsNotified] = useState(true);

@@ -1,7 +1,7 @@
-import React from 'react'
-import NftImage from '../../assets/NFT-1.png'
-import AvatarImage from '../../assets/avatar.png'
-import Button from './Button'
+import React from 'react';
+import NftImage from 'assets/NFT-1.png';
+import AvatarImage from 'assets/avatar.png';
+import Button from 'views/components/shared/Button';
 
 function CardSmall({ title, price, amount }) {
     return (

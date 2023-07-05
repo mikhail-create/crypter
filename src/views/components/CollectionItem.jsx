@@ -1,6 +1,6 @@
 import React from 'react'
-import NftImage from '../../assets/NFT-1.png'
-import AvatarImage from '../../assets/avatar.png'
+import NftImage from 'assets/NFT-1.png'
+import AvatarImage from 'assets/avatar.png'
 
 function CollectionItem({ title, itemsAmount, author }) {
     return (

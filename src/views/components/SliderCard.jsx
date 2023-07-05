@@ -1,12 +1,12 @@
-import React from 'react'
-import { ReactComponent as PlusIcon } from '../../assets/icons/plus.svg'
-import { ReactComponent as ArrowExpand } from '../../assets/icons/arrow-expand.svg'
-import { ReactComponent as Lightning } from '../../assets/icons/lightning.svg'
-import { ReactComponent as Donut } from '../../assets/icons/donut.svg'
-import { ReactComponent as Doughnut } from '../../assets/icons/doughnut.svg'
-import { ReactComponent as Cup } from '../../assets/icons/cup.svg'
-import { ReactComponent as Verified } from '../../assets/icons/verified.svg'
-import AvatarImage from '../../assets/avatar.png'
+import React from 'react';
+import { ReactComponent as PlusIcon } from 'assets/icons/plus.svg';
+import { ReactComponent as ArrowExpand } from 'assets/icons/arrow-expand.svg';
+import { ReactComponent as Lightning } from 'assets/icons/lightning.svg';
+import { ReactComponent as Donut } from 'assets/icons/donut.svg';
+import { ReactComponent as Doughnut } from 'assets/icons/doughnut.svg';
+import { ReactComponent as Cup } from 'assets/icons/cup.svg';
+import { ReactComponent as Verified } from 'assets/icons/verified.svg';
+import AvatarImage from 'assets/avatar.png';
 
 function SliderCard({ rank, name, wallet }) {
     return (

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import Button from '../components/Button'
-import NftImage from '../../assets/NFT-1.png'
-import AvatarImage from '../../assets/avatar.png'
-import AvatarImage01 from '../../assets/avatar-01.png'
-import AvatarImage02 from '../../assets/avatar-02.png'
-import { ReactComponent as CandlesticksUp } from '../../assets/icons/candlesticks-up.svg'
-import { ReactComponent as Heart } from '../../assets/icons/heart.svg'
+import React, { useState } from 'react';
+import Button from 'views/components/shared/Button';
+import NftImage from 'assets/NFT-1.png';
+import AvatarImage from 'assets/avatar.png';
+import AvatarImage01 from 'assets/avatar-01.png';
+import AvatarImage02 from 'assets/avatar-02.png';
+import { ReactComponent as CandlesticksUp } from 'assets/icons/candlesticks-up.svg';
+import { ReactComponent as Heart } from 'assets/icons/heart.svg';
 
 function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
     const [isHovered, setIsHovered] = useState(false)

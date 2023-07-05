@@ -1,10 +1,10 @@
 import React from 'react'
-import ContentSection from '../components/sections/ContentSection'
-import AuctionSection from '../components/sections/AuctionSection'
-import FeedSection from '../components/sections/FeedSection'
-import PopularSection from '../components/sections/PopularSection'
-import HotBidSection from '../components/sections/HotBidSection'
-import HotCollectionSection from '../components/sections/HotCollectionSection'
+import ContentSection from 'views/components/sections/ContentSection'
+import AuctionSection from 'views/components/sections/AuctionSection'
+import FeedSection from 'views/components/sections/FeedSection'
+import PopularSection from 'views/components/sections/PopularSection'
+import HotBidSection from 'views/components/sections/HotBidSection'
+import HotCollectionSection from 'views/components/sections/HotCollectionSection'
 
 function HomePage() {
   return (
