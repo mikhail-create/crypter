@@ -25,7 +25,7 @@ function AuctionSection() {
                                 <span className='subtitle font-caption--2'>
                                     Creator
                                 </span>
-                                <span className='title font-caption--1--bold'>
+                                <span className='title font-caption--1-bold'>
                                     Enrico Cole
                                 </span>
                             </div>
@@ -36,7 +36,7 @@ function AuctionSection() {
                                 <span className='subtitle font-caption--2'>
                                     Instant price
                                 </span>
-                                <span className='title font-caption--1--bold'>
+                                <span className='title font-caption--1-bold'>
                                     3.5 ETH
                                 </span>
                             </div>

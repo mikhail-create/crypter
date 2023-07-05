@@ -5,6 +5,7 @@ import FeedSection from 'views/components/sections/FeedSection'
 import PopularSection from 'views/components/sections/PopularSection'
 import HotBidSection from 'views/components/sections/HotBidSection'
 import HotCollectionSection from 'views/components/sections/HotCollectionSection'
+import DiscoverSection from 'views/components/sections/DiscoverSection'
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
         <PopularSection />
         <HotBidSection />
         <HotCollectionSection />
+        <DiscoverSection />
     </div>
   )
 }
