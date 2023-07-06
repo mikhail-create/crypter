@@ -4,6 +4,8 @@ import Button from 'views/components/shared/Button';
 import DropDown from 'views/components/shared/DropDown';
 import NavItem from 'views/components/shared/NavItem';
 import RangeBar from 'views/components/shared/RangeBar';
+import { ReactComponent as Close } from 'assets/icons/close.svg';
+import { ReactComponent as Loading } from 'assets/icons/loading.svg';
 
 function DiscoverSection() {
     // Массив тестовых карточек для заполнения
@@ -206,7 +208,7 @@ function DiscoverSection() {
                     <NavItem handleCategoryChange={handleCategoryChange} name="Music" isSelected={category === 'Music'} />
                     <NavItem handleCategoryChange={handleCategoryChange} name="Video" isSelected={category === 'Video'} />
                 </nav>
-                <Button text='Filter' isColored={true} buttonWidth={116} />
+                <Button text='Filter' isColored={true} icon={<Close />} />
             </div>
             <div className="discover--divider"></div>
             <div className="discover-filters">
@@ -233,9 +235,8 @@ function DiscoverSection() {
                 ))}
                 <div onClick={loadMoreItems} className="discover-list--button">
                     {
-                        !isLoading ? <Button text='Load more' /> : <Button text='Loading...' />
+                        !isLoading ? <Button text='Load more' /> : <Button text='Loading' icon={<Loading />}/>
                     }
-
                 </div>
             </div>
 

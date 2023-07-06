@@ -6,6 +6,7 @@ import AvatarImage01 from 'assets/avatar-01.png';
 import AvatarImage02 from 'assets/avatar-02.png';
 import { ReactComponent as CandlesticksUp } from 'assets/icons/candlesticks-up.svg';
 import { ReactComponent as Heart } from 'assets/icons/heart.svg';
+import { ReactComponent as ScatterUp } from 'assets/icons/scatter-up.svg';
 import CustomLabel from 'views/components/shared/CustomLabel';
 
 function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
@@ -40,8 +41,7 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
                         <Button
                             text='Place a bid'
                             isColored={true}
-                            buttonWidth={134}
-                            buttonHeight={40}
+                            icon={<ScatterUp />}
                         />
                     </div>
                 </div>

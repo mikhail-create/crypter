@@ -21,7 +21,7 @@ function CardSmall({ title, price, amount }) {
                         1 of {amount}
                     </span>
                 </div>
-                <Button text="Place a bid" isColored={true} isBiggerFont={false} />
+                <Button text="Place a bid" isColored={true} />
             </div>
         </div>
     )

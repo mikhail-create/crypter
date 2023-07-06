@@ -82,8 +82,8 @@ function AuctionSection() {
                     </div>
                 </div>
                 <div className="auction-info--buttons">
-                    <Button text="Place a bid" isColored={true} isBiggerFont={false} buttonWidth='100%' buttonHeight='48px' />
-                    <Button text="View item" isColored={false} isBiggerFont={false} buttonWidth='100%' buttonHeight='48px' />
+                    <Button text="Place a bid" isColored={true} size='Medium' />
+                    <Button text="View item" size='Medium' />
                 </div>
                 <div className="auction-info-actions">
                     <div className="auction-info-actions--arrow">

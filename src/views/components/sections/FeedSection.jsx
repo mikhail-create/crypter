@@ -3,6 +3,7 @@ import CardBig from 'views/components/CardBig';
 import CardSmall from 'views/components/CardSmall';
 import AvatarImage from 'assets/avatar.png';
 import Button from 'views/components/shared/Button';
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
 
 const LatestCreator = ({ name, wallet, amount }) => {
     return (
@@ -47,7 +48,7 @@ function FeedSection() {
                     <LatestCreator className='feed-latest--card' name='Payton Harris' wallet='2.456' amount='6' />
                 </div>
                 <div className='feed-latest--btn'>
-                    <Button text='Discover more' buttonWidth='98px' />
+                    <Button text='Discover more' icon={<ArrowRight />} />
                 </div>
             </div>
         </section>

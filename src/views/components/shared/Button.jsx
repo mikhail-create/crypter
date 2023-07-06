@@ -1,22 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-function Button({ text, isColored, isBiggerFont, buttonWidth, buttonHeight }) {
-    const ButtonStyle = {
-        width: buttonWidth,
-        height: buttonHeight
-    }
+const Button = ({ text, size, isColored, iconPosition, icon }) => {
+    const buttonSize = size === 'Medium' ? 'button--medium font-button--1' : 'button--small font-button--2';
+    const buttonColor = isColored ? 'button--colored' : '';
+    const hasIcon = icon ? true : false;
+    const isIconLeft = iconPosition === 'Left';
 
     return (
-        <button
-        style={ButtonStyle}
-        className={`
-            ${"button"} 
-            ${isColored && "button--colored"} 
-            ${isBiggerFont && "button--bigger"}
-        `}>
-            {text}
+        <button className={`button ${buttonSize} ${buttonColor}`}>
+            {isIconLeft && hasIcon && <span className="button-icon">{icon}</span>}
+            <span className="button-text">{text}</span>
+            {!isIconLeft && hasIcon && <span className="button-icon">{icon}</span>}
         </button>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;
