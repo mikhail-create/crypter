@@ -4,6 +4,7 @@ import CardSmall from 'views/components/CardSmall';
 import AvatarImage from 'assets/avatar.png';
 import Button from 'views/components/shared/Button';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
+import NFTList from '_helpers/NFTList'
 
 const LatestCreator = ({ name, wallet, amount }) => {
     return (
@@ -32,9 +33,9 @@ function FeedSection() {
             <div className='feed--wrapper'>
                 <CardBig />
                 <div className='feed--list'>
-                    <CardSmall title='ETH never die' price={0.27} amount={12} />
-                    <CardSmall title='ETH never die' price={0.27} amount={12} />
-                    <CardSmall title='ETH never die' price={0.27} amount={12} />
+                    <CardSmall title={NFTList[15].name} price={NFTList[15].price} amount={NFTList[15].stockAmount} imgSrc={NFTList[15].src} />
+                    <CardSmall title={NFTList[16].name} price={NFTList[16].price} amount={NFTList[16].stockAmount} imgSrc={NFTList[16].src} />
+                    <CardSmall title={NFTList[17].name} price={NFTList[17].price} amount={NFTList[17].stockAmount} imgSrc={NFTList[17].src} />
                 </div>
             </div>
             <div className="feed-latest">

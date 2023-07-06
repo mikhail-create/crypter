@@ -1,17 +1,16 @@
 import React from 'react';
-import NftImage from 'assets/NFT-1.png';
 import AvatarImage from 'assets/avatar.png';
 import Button from 'views/components/shared/Button';
 import CustomLabel from 'views/components/shared/CustomLabel';
 
-function CardSmall({ title, price, amount }) {
+function CardSmall({ title, price, amount, imgSrc }) {
     return (
         <div className='card-small'>
-            <img srcSet={NftImage} alt='Nft Image' />
+            <img srcSet={imgSrc} alt='Nft Image' />
             <div className='card-small-info'>
-                <span className='card-small-info--title font-body--2-bold'>
+                <div className='card-small-info--title font-body--2-bold'>
                     {title}
-                </span>
+                </div>
                 <div className='card-small-info--data'>
                     <img srcSet={AvatarImage} alt='Avatar' />
                     <div className='font-hairline--2'>

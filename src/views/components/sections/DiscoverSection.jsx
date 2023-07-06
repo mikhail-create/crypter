@@ -6,6 +6,7 @@ import NavItem from 'views/components/shared/NavItem';
 import RangeBar from 'views/components/shared/RangeBar';
 import { ReactComponent as Close } from 'assets/icons/close.svg';
 import { ReactComponent as Loading } from 'assets/icons/loading.svg';
+import NFTList from '_helpers/NFTList';
 
 function DiscoverSection() {
     // Массив тестовых карточек для заполнения
@@ -158,7 +159,7 @@ function DiscoverSection() {
     useEffect(() => {
         // Загрузка первых 8 карточек
         const itemsPerPage = 8;
-        const nextItems = testItems.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
+        const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
         setDisplayedItems(nextItems);
         setLastLoadedIndex(lastLoadedIndex + itemsPerPage);
     }, []);
@@ -172,7 +173,7 @@ function DiscoverSection() {
 
         setTimeout(() => {
             const itemsPerPage = 8;
-            const nextItems = testItems.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
+            const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
             setDisplayedItems(prevItems => [...prevItems, ...nextItems]);
             setLastLoadedIndex(prevIndex => prevIndex + itemsPerPage);
             setIsLoading(false);
@@ -231,11 +232,19 @@ function DiscoverSection() {
             </div>
             <div className="discover-list">
                 {displayedItems.map((item, index) => (
-                    <div key={index}>{item}</div>
+                    <CardMedium
+                        key={item.name}
+                        title={item.name}
+                        instaPrice={item.price}
+                        stockAmount={item.stockAmount}
+                        bid={item.highestBid}
+                        isNewBids={item.newBid}
+                        imgSrc={item.src}
+                    />
                 ))}
                 <div onClick={loadMoreItems} className="discover-list--button">
                     {
-                        !isLoading ? <Button text='Load more' /> : <Button text='Loading' icon={<Loading />}/>
+                        !isLoading ? <Button text='Load more' /> : <Button text='Loading' icon={<Loading />} />
                     }
                 </div>
             </div>

@@ -3,6 +3,7 @@ import Carousel from 'react-elastic-carousel'
 import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg'
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
 import CardMedium from '../CardMedium'
+import NFTList from '_helpers/NFTList'
 
 function HotBidSection() {
     const carouselRef = useRef(null);
@@ -39,39 +40,58 @@ function HotBidSection() {
                     itemPadding={[0]}
                 >
                     <CardMedium
-                        title='Amazing digital art'
-                        instaPrice={2.45}
-                        stockAmount={3}
-                        bid={0.001}
-                        isNewBids={true}
+                        key={NFTList[5].name}
+                        title={NFTList[5].name}
+                        instaPrice={NFTList[5].price}
+                        stockAmount={NFTList[5].stockAmount}
+                        bid={NFTList[5].highestBid}
+                        isNewBids={NFTList[5].newBid}
+                        imgSrc={NFTList[5].src}
                     />
                     <CardMedium
-                        title='Amazing digital art'
-                        instaPrice={2.45}
-                        stockAmount={3}
-                        bid={0.001}
-                        isNewBids={true}
+                        key={NFTList[6].name}
+                        title={NFTList[6].name}
+                        instaPrice={NFTList[6].price}
+                        stockAmount={NFTList[6].stockAmount}
+                        bid={NFTList[6].highestBid}
+                        isNewBids={NFTList[6].newBid}
+                        imgSrc={NFTList[6].src}
                     />
                     <CardMedium
-                        title='Amazing digital art'
-                        instaPrice={2.45}
-                        stockAmount={3}
-                        bid={0.001}
-                        isNewBids={true}
+                        key={NFTList[7].name}
+                        title={NFTList[7].name}
+                        instaPrice={NFTList[7].price}
+                        stockAmount={NFTList[7].stockAmount}
+                        bid={NFTList[7].highestBid}
+                        isNewBids={NFTList[7].newBid}
+                        imgSrc={NFTList[7].src}
                     />
                     <CardMedium
-                        title='Amazing digital art'
-                        instaPrice={2.45}
-                        stockAmount={3}
-                        bid={0.001}
-                        isNewBids={true}
+                        key={NFTList[8].name}
+                        title={NFTList[8].name}
+                        instaPrice={NFTList[8].price}
+                        stockAmount={NFTList[8].stockAmount}
+                        bid={NFTList[8].highestBid}
+                        isNewBids={NFTList[8].newBid}
+                        imgSrc={NFTList[8].src}
                     />
                     <CardMedium
-                        title='Amazing digital art'
-                        instaPrice={2.45}
-                        stockAmount={3}
-                        bid={0.001}
-                        isNewBids={true}
+                        key={NFTList[8].name}
+                        title={NFTList[8].name}
+                        instaPrice={NFTList[8].price}
+                        stockAmount={NFTList[8].stockAmount}
+                        bid={NFTList[8].highestBid}
+                        isNewBids={NFTList[8].newBid}
+                        imgSrc={NFTList[8].src}
+                    />
+                    <CardMedium
+                        key={NFTList[8].name}
+                        title={NFTList[8].name}
+                        instaPrice={NFTList[8].price}
+                        stockAmount={NFTList[8].stockAmount}
+                        bid={NFTList[8].highestBid}
+                        isNewBids={NFTList[8].newBid}
+                        imgSrc={NFTList[8].src}
                     />
                 </Carousel>
             </div>

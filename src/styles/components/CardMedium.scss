@@ -71,11 +71,11 @@
         .stats {
             display: flex;
             flex-direction: row;
-            align-items: center;
             justify-content: space-between;
 
             &--title {
                 color: $neutral-2;
+                width: 184px;
             }
 
             &--bidders {

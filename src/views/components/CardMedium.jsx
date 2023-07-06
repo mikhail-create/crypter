@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from 'views/components/shared/Button';
-import NftImage from 'assets/NFT-1.png';
 import AvatarImage from 'assets/avatar.png';
 import AvatarImage01 from 'assets/avatar-01.png';
 import AvatarImage02 from 'assets/avatar-02.png';
@@ -9,7 +8,7 @@ import { ReactComponent as Heart } from 'assets/icons/heart.svg';
 import { ReactComponent as ScatterUp } from 'assets/icons/scatter-up.svg';
 import CustomLabel from 'views/components/shared/CustomLabel';
 
-function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
+function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) {
     const [isHovered, setIsHovered] = useState(false)
 
     const handleMouseEnter = () => {
@@ -46,12 +45,12 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids }) {
                     </div>
                 </div>
             }
-            <img srcSet={NftImage} alt={title + ' Nft Image'} />
+            <img srcSet={imgSrc} alt={title} />
             <div className='card-medium-description'>
                 <div className='stats'>
-                    <span className='stats--title font-body--2-bold'>
+                    <div className='stats--title font-body--2-bold'>
                         {title}
-                    </span>
+                    </div>
                     <div className='stats--price font-hairline--2'>
                         <CustomLabel text={instaPrice + ' ETH'} isPopularGhost={true} />
                     </div>
