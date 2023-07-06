@@ -1,0 +1,42 @@
+.cta {
+    padding: 80px 160px;
+    border-top: 1px solid $neutral-6;
+    border-bottom: 1px solid $neutral-6;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+
+        &--subtitle {
+            color: $neutral-4;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        &--title {
+            color: $neutral-2;
+            margin-bottom: 20px;
+        }
+
+        &--info {
+            color: $neutral-4;
+            margin-bottom: 40px;
+        }
+
+        &--actions {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+    }
+
+    &--image {
+        width: 640px;
+        height: 640px;
+    }
+}

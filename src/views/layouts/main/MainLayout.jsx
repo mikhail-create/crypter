@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import routes from '../../../routes'
 import Header from '../../components/header/Header'
 import styles from './MainLayout.module.scss'
+import Footer from 'views/components/footer/Footer'
 
 function MainLayout() {
     return (
@@ -21,6 +22,7 @@ function MainLayout() {
                     </Routes>
                 </div>
             </main>
+            <Footer />
         </>
     )
 }
