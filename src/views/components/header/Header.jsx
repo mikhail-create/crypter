@@ -26,7 +26,7 @@ function Header() {
                     <SearchBar />
                     <Notification />
                     <div className="right--buttons">
-                        <Button text='Upload' isColored={true} />
+                        <Button path='upload' text='Upload' isColored={true} />
                         <Button text='Connect Wallet' />
                     </div>
                 </div>

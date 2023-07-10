@@ -1,0 +1,23 @@
+.create-item {
+    margin-top: 80px;
+    width: 352px;
+    height: 360px;
+    box-sizing: border-box;
+    padding: 16px 16px 24px 16px;
+    border-radius: 16px;
+    border: 1px solid $neutral-6;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    > img {
+        width: 320px;
+        height: 256px;
+        border-radius: 8px;
+    }
+
+    &--button {
+        width: fit-content;
+    }
+}
