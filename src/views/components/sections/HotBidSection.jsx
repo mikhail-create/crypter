@@ -67,7 +67,7 @@ function HotBidSection() {
                         imgSrc={NFTList[7].src}
                     />
                     <CardMedium
-                        key={NFTList[8].name}
+                        key={NFTList[8].name + 0}
                         title={NFTList[8].name}
                         instaPrice={NFTList[8].price}
                         stockAmount={NFTList[8].stockAmount}
@@ -76,7 +76,7 @@ function HotBidSection() {
                         imgSrc={NFTList[8].src}
                     />
                     <CardMedium
-                        key={NFTList[8].name}
+                        key={NFTList[8].name + 1}
                         title={NFTList[8].name}
                         instaPrice={NFTList[8].price}
                         stockAmount={NFTList[8].stockAmount}
@@ -85,7 +85,7 @@ function HotBidSection() {
                         imgSrc={NFTList[8].src}
                     />
                     <CardMedium
-                        key={NFTList[8].name}
+                        key={NFTList[8].name + 2}
                         title={NFTList[8].name}
                         instaPrice={NFTList[8].price}
                         stockAmount={NFTList[8].stockAmount}
