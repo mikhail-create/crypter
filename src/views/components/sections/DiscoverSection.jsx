@@ -70,22 +70,16 @@ function DiscoverSection() {
             </div>
             <div className="discover--divider"></div>
             <div className="discover-filters">
-                <label className='font-hairline--2'>
-                    Price
-                </label>
-                <label className='font-hairline--2'>
-                    Likes
-                </label>
-                <label className='font-hairline--2'>
-                    Creator
-                </label>
-                <label className='font-hairline--2'>
-                    Price range
-                </label>
-                <DropDown items={['Highest price', 'Lowest price', 'Popular', 'Newest']} />
-                <DropDown items={['Most liked', 'Least liked']} />
-                <DropDown items={['Verified only', 'All creators', 'Newest creators']} />
-                <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
+                <DropDown label='price' items={['Highest price', 'Lowest price', 'Popular', 'Newest']} />
+                <DropDown label='likes' items={['Most liked', 'Least liked']} />
+                <DropDown label='creator' items={['Verified only', 'All creators', 'Newest creators']} />
+                <div className="discover-filters--price"> 
+                    <label className='font-hairline--2'>
+                        Price range
+                    </label>
+                    <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
+                </div>
+
             </div>
             <div className="discover-list">
                 {displayedItems.map((item, index) => (

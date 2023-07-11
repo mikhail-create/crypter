@@ -1,4 +1,4 @@
-import React from 'react'
+import { React, useEffect } from 'react'
 import ContentSection from 'views/components/sections/ContentSection'
 import AuctionSection from 'views/components/sections/AuctionSection'
 import FeedSection from 'views/components/sections/FeedSection'
@@ -9,18 +9,22 @@ import DiscoverSection from 'views/components/sections/DiscoverSection'
 import CTASection from 'views/components/sections/CTASection'
 
 function HomePage() {
-  return (
-    <div className='home'>
-        <ContentSection />
-        <AuctionSection />
-        <FeedSection />
-        <PopularSection />
-        <HotBidSection />
-        <HotCollectionSection />
-        <DiscoverSection />
-        <CTASection />
-    </div>
-  )
+    useEffect(() => {
+        document.title = 'Crypter'
+    }, [])
+
+    return (
+        <div className='home'>
+            <ContentSection />
+            <AuctionSection />
+            <FeedSection />
+            <PopularSection />
+            <HotBidSection />
+            <HotCollectionSection />
+            <DiscoverSection />
+            <CTASection />
+        </div>
+    )
 }
 
 export default HomePage

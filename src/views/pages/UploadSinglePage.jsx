@@ -2,6 +2,7 @@ import React from 'react'
 import CardMedium from 'views/components/CardMedium'
 import Button from 'views/components/shared/Button'
 import CustomInput from 'views/components/shared/CustomInput';
+import DropDown from 'views/components/shared/DropDown';
 import DropZone from 'views/components/shared/DropZone'
 
 function UploadSinglePage() {
@@ -36,7 +37,9 @@ function UploadSinglePage() {
                     <CustomInput placeholder='e. g. "Redeemable Bitcoin Card with logo"' label='Item Name' />
                     <CustomInput placeholder='e. g. “After purchasing you will able to recived the logo...”' label='Description' />
                     <div className='item-detail--settings'>
-                        
+                        <DropDown items={['0%', '10%', '20%']} label='Royalties' />
+                        <CustomInput placeholder='e. g. Size' label='Size' />
+                        <CustomInput placeholder='e. g. Propertie' label='Propertie' />
                     </div>
                 </div>
             </div>

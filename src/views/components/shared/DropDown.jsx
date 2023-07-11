@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { ReactComponent as ArrowDown } from 'assets/icons/arrow-down.svg';
 
-function DropDown({items }) {
-    const [label, setLabel] = useState(items[0]);
+function DropDown({ items, label }) {
+    const [placeholder, setPlaceholder] = useState(items[0]);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     const changeDropDownState = (label) => {
-        setLabel(label)
+        setPlaceholder(label)
         setIsMenuOpen(false)
     }
 
     return (
         <div className='dropdown'>
+            <label className='font-hairline--2'>{label}</label>
             <div onClick={() => setIsMenuOpen(!isMenuOpen)} className='font-caption--1-bold dropdown-field'>
-                <span>{label}</span>
+                <span>{placeholder}</span>
                 <div className='dropdown-field--arrow'>
                     <ArrowDown width={12} />
                 </div>

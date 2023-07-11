@@ -1,10 +1,14 @@
-import React from 'react'
+import { React, useEffect } from 'react'
 import Button from 'views/components/shared/Button'
 import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
 import CreateItemCard from 'views/components/CreateItemCard';
 
 function UploadPage() {
+    useEffect(() => {
+        document.title = 'Upload'
+    }, [])
+
     return (
         <div className='upload'>
             <div className='upload-nav'>

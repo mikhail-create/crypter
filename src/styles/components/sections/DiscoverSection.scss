@@ -35,13 +35,17 @@
     &-filters {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, auto);
         grid-column-gap: 32px;
-        grid-row-gap: 12px;
 
-        > label {
-            color: $neutral-5;
-            height: 12px;
+        &--price {
+            display: flex;
+            flex-direction: column;
+
+            > label {
+                color: $neutral-4;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+            }
         }
     }
 
