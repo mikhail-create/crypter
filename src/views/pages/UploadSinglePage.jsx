@@ -8,13 +8,41 @@ import ToggleButton from 'views/components/shared/ToggleButton';
 import { ReactComponent as Plus } from 'assets/icons/plus-2.svg'
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
 import { ReactComponent as Loading } from 'assets/icons/loading.svg'
+import { ReactComponent as Close } from 'assets/icons/close-circle.svg'
+import NFTImagePlaceholder from 'assets/NFT.png'
 
 function UploadSinglePage() {
     const [isSaving, setIsSaving] = useState(false)
+    const [itemName, setItemName] = useState('');
+    const [description, setDescription] = useState('');
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [royalties, setRoyalties] = useState('');
+    const [size, setSize] = useState('');
+    const [property, setProperty] = useState('');
+
+    const handleDescriptionChange = (value) => {
+        console.log('Item Name:', value);
+        setDescription(value)
+        setIsSaving(true);
+    };
+
+    const handleItemNameChange = (value) => {
+        console.log('Item Name:', value);
+        setItemName(value)
+        setIsSaving(true);
+    };
 
     const handleFileUpload = (file) => {
-        console.log(file);
+        // Обработка загруженного файла
+        setSelectedImage(URL.createObjectURL(file));
     };
+
+    const clearInputs = () => {
+        setSelectedImage(null)
+        setDescription(null)
+        setIsSaving(null)
+        setItemName(null)
+    }
 
     return (
         <div className='upload-single'>
@@ -23,7 +51,7 @@ function UploadSinglePage() {
                     <h2 className='font-headline--2'>
                         Create single collectible
                     </h2>
-                    <Button text='Switch to Multiple' />
+                    <Button text='Switch to Multiple' path='/upload/multiple' />
                 </div>
                 <div className='item-upload'>
                     <span className='font-body--2-bold'>
@@ -38,8 +66,16 @@ function UploadSinglePage() {
                 </div>
                 <div className='item-detail'>
                     <span className='font-body--2-bold'>Item Details</span>
-                    <CustomInput placeholder='e. g. "Redeemable Bitcoin Card with logo"' label='Item Name' />
-                    <CustomInput placeholder='e. g. “After purchasing you will able to recived the logo...”' label='Description' />
+                    <CustomInput
+                        onChange={handleItemNameChange}
+                        placeholder='e. g. "Redeemable Bitcoin Card with logo"'
+                        label='Item Name'
+                    />
+                    <CustomInput
+                        onChange={handleDescriptionChange}
+                        placeholder='e. g. “After purchasing you will able to recived the logo...”'
+                        label='Description'
+                    />
                     <div className='item-detail--settings'>
                         <DropDown items={['0%', '10%', '20%']} label='Royalties' />
                         <CustomInput placeholder='e. g. Size' label='Size' />
@@ -101,7 +137,7 @@ function UploadSinglePage() {
                     </div>
                 </div>
                 <div className='item-actions'>
-                    <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight fill='white' />} />
+                    <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight />} />
                     {
                         isSaving &&
                         <div className='item-actions--saving'>
@@ -115,8 +151,21 @@ function UploadSinglePage() {
                     }
                 </div>
             </div>
-            <div className='upload-single--preview'>
-                <CardMedium />
+            <div className='upload-single-preview'>
+                <CardMedium
+                    title={itemName || 'Black Golden Tiger'}
+                    instaPrice='2.45'
+                    stockAmount={3}
+                    bid='0.001'
+                    isNewBids={true}
+                    imgSrc={selectedImage || NFTImagePlaceholder}
+                />
+                <div className='upload-single-preview--clear' onClick={clearInputs}>
+                    <Close />
+                    <span className='font-button--1'>
+                        Clear all
+                    </span>
+                </div>
             </div>
         </div>
     )
