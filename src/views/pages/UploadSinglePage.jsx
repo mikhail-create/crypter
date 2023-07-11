@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CardMedium from 'views/components/CardMedium'
 import Button from 'views/components/shared/Button'
 import CustomInput from 'views/components/shared/CustomInput';
 import DropDown from 'views/components/shared/DropDown';
 import DropZone from 'views/components/shared/DropZone'
 import ToggleButton from 'views/components/shared/ToggleButton';
+import { ReactComponent as Plus } from 'assets/icons/plus-2.svg'
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
+import { ReactComponent as Loading } from 'assets/icons/loading.svg'
 
 function UploadSinglePage() {
+    const [isSaving, setIsSaving] = useState(false)
 
     const handleFileUpload = (file) => {
-        // Обработка данных о загруженном файле
         console.log(file);
     };
 
@@ -47,7 +50,69 @@ function UploadSinglePage() {
 
                 </div>
                 <div className='item-detail'>
-                    <ToggleButton />
+                    <div className='item-detail--property'>
+                        <div className='property--column'>
+                            <label className='font-body--2-bold'>
+                                Put on sale
+                            </label>
+                            <span className='font-caption--2'>
+                                You’ll receive bids on this item
+                            </span>
+                        </div>
+                        <ToggleButton />
+                    </div>
+                    <div className='item-detail--property'>
+                        <div className='property--column'>
+                            <label className='font-body--2-bold'>
+                                Instant sale price
+                            </label>
+                            <span className='font-caption--2'>
+                                Enter the price for which the item will be instantly sold                            </span>
+                        </div>
+                        <ToggleButton />
+                    </div>
+                    <div className='item-detail--property'>
+                        <div className='property--column'>
+                            <label className='font-body--2-bold'>
+                                Unlock once purchased
+                            </label>
+                            <span className='font-caption--2'>
+                                Content will be unlocked after successful transaction                            </span>
+                        </div>
+                        <ToggleButton />
+                    </div>
+                    <div className='item-detail--property'>
+                        <div className='property--column'>
+                            <label className='font-body--2-bold'>
+                                Choose collection
+                            </label>
+                            <span className='font-caption--2'>
+                                Choose an exiting collection or create a new one
+                            </span>
+                        </div>
+                    </div>
+                    <div className='item-detail-collection'>
+                        <div className='item-detail-collection--block'>
+                            <Plus />
+                        </div>
+                        <span className='font-button--2'>
+                            Create <br /> collection
+                        </span>
+                    </div>
+                </div>
+                <div className='item-actions'>
+                    <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight fill='white' />} />
+                    {
+                        isSaving &&
+                        <div className='item-actions--saving'>
+                            <span className='font-button--1'>
+                                Auto saving
+                            </span>
+                            <div className='item-actions--spinner'>
+                                <Loading />
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div className='upload-single--preview'>

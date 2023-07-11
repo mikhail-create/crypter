@@ -9,9 +9,9 @@ const Button = ({ text, size, isColored, iconPosition, icon, path }) => {
 
     return (
         <button className={`button ${buttonSize} ${buttonColor}`}>
-            {isIconLeft && hasIcon && <span className="button-icon">{icon}</span>}
+            {isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
             <Link to={path} className="button-text">{text}</Link>
-            {!isIconLeft && hasIcon && <span className="button-icon">{icon}</span>}
+            {!isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
         </button>
     );
 };

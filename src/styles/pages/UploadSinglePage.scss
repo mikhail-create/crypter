@@ -48,12 +48,77 @@
                 grid-template-rows: 1fr;
                 grid-column-gap: 20px;
             }
+
+            &--property {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .property--column {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    > span {
+                        color: $neutral-4;
+                    }
+                }
+            }
+
+            &-collection {
+                margin-top: -6px;
+                padding: 24px;
+                width: 160px;
+                height: 124px;
+
+                &--block {
+                    border-radius: 100%;
+                    width: 32px;
+                    height: 32px;
+                    background-color: $neutral-2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .item-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &--saving {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 12px;
+            }
+
+            &--spinner {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                animation: spin 2s linear infinite;
+            }
         }
 
         .item--divider {
             background-color: $neutral-6;
             height: 1px;
         }
-        
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg); // Начальный угол вращения
+    }
+    100% {
+        transform: rotate(360deg); // Конечный угол вращения (полное оборот вокруг своей оси)
     }
 }
