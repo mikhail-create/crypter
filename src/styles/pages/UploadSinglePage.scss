@@ -9,11 +9,11 @@
         width: 640px;
         display: flex;
         flex-direction: column;
+        gap: 40px;
 
         .item-header {
             display: flex;
             flex-direction: row;
-            margin-bottom: 40px;
 
             > h2 {
                 width: 469px;
@@ -24,7 +24,6 @@
         .item-upload {
             display: flex;
             flex-direction: column;
-            margin-bottom: 40px;
 
             > span:nth-child(2) {
                 color: $neutral-4;
@@ -50,5 +49,11 @@
                 grid-column-gap: 20px;
             }
         }
+
+        .item--divider {
+            background-color: $neutral-6;
+            height: 1px;
+        }
+        
     }
 }

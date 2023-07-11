@@ -4,6 +4,7 @@ import Button from 'views/components/shared/Button'
 import CustomInput from 'views/components/shared/CustomInput';
 import DropDown from 'views/components/shared/DropDown';
 import DropZone from 'views/components/shared/DropZone'
+import ToggleButton from 'views/components/shared/ToggleButton';
 
 function UploadSinglePage() {
 
@@ -41,6 +42,12 @@ function UploadSinglePage() {
                         <CustomInput placeholder='e. g. Size' label='Size' />
                         <CustomInput placeholder='e. g. Propertie' label='Propertie' />
                     </div>
+                </div>
+                <div className='item--divider'>
+
+                </div>
+                <div className='item-detail'>
+                    <ToggleButton />
                 </div>
             </div>
             <div className='upload-single--preview'>
