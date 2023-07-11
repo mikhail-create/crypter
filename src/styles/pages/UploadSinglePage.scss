@@ -5,6 +5,25 @@
     flex-direction: row;
     gap: 128px;
 
+    &-preview {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 64px 64px -48px rgba(31, 47, 70, 0.12);
+
+        &--clear {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            color: $neutral-4;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
     &--item {
         width: 640px;
         display: flex;
