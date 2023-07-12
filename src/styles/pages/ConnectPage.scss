@@ -1,0 +1,81 @@
+.connect {
+    box-sizing: border-box;
+    padding: 80px 160px 136px 160px;
+
+    &--header {
+        height: 56px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    &--divider {
+        height: 2px;
+        background-color: $neutral-6;
+        margin-bottom: 80px;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: row;
+        gap: 128px;
+
+        .connect-wallets {
+            display: flex;
+            flex-direction: column;
+
+            &--item {
+                height: 128px;
+                width: 544px;
+                box-sizing: border-box;
+                padding: 32px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 16px;
+                border: 2px solid $neutral-8;
+                transition: .5s;
+
+                .item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 32px;
+
+                    &--icon {
+                        width: 64px;
+                        height: 64px;
+                        border-radius: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .purple {
+                        background-color: $primary-purple;
+                    }
+
+                    .green {
+                        background-color: $primary-green;
+                    }
+
+                    .blue {
+                        background-color: $primary-blue;
+                    }
+
+                    .rose {
+                        background-color: $primary-rose;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    border: 2px solid $neutral-6;
+                }
+            }
+        }
+    }
+}

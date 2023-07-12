@@ -35,7 +35,7 @@ function UploadModal({ onCloseButtonClick }) {
     const stepsData = [
         {
             stepName: 'firstStep',
-            icon: steps.firstStep ? <Check /> : <Upload />,
+            icon: steps.firstStep ? <Check fill='white' /> : <Upload />,
             buttonText: steps.firstStep ? 'Done' : 'Start now',
             loadingIcon: steps.firstStepLoading && <Loading />,
             isColored: !steps.firstStep,
@@ -45,7 +45,7 @@ function UploadModal({ onCloseButtonClick }) {
         },
         {
             stepName: 'secondStep',
-            icon: steps.secondStep ? <Check /> : <Pencil />,
+            icon: steps.secondStep ? <Check fill='white' /> : <Pencil />,
             buttonText: steps.secondStep ? 'Done' : 'Start now',
             loadingIcon: steps.secondStepLoading && <Loading />,
             isColored: !steps.secondStep,
@@ -55,7 +55,7 @@ function UploadModal({ onCloseButtonClick }) {
         },
         {
             stepName: 'thirdStep',
-            icon: steps.thirdStep ? <Check /> : <ShoppingBag />,
+            icon: steps.thirdStep ? <Check fill='white' /> : <ShoppingBag />,
             buttonText: steps.thirdStep ? 'Done' : 'Start now',
             loadingIcon: steps.thirdStepLoading && <Loading />,
             isColored: !steps.thirdStep,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CardMedium from 'views/components/CardMedium'
 import Button from 'views/components/shared/Button'
 import CustomInput from 'views/components/shared/CustomInput';
@@ -21,6 +21,21 @@ function UploadSinglePage() {
     const [size, setSize] = useState('');
     const [property, setProperty] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(true)
+
+    useEffect(() => {
+        // При открытии модального окна добавляем стиль "overflow: hidden" к body
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            // При закрытии модального окна удаляем стиль "overflow: hidden" из body
+            document.body.style.overflow = '';
+        }
+
+        // Функция cleanup, которая будет вызвана при размонтировании компонента
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isModalOpen]);
 
     const handleDescriptionChange = (value) => {
         console.log('Item Name:', value);
@@ -48,7 +63,7 @@ function UploadSinglePage() {
 
     const handleCloseButtonClick = () => {
         setIsModalOpen(false);
-      };
+    };
 
     return (
         <div className='upload-single'>
