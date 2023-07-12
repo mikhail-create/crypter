@@ -10,6 +10,7 @@ import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
 import { ReactComponent as Loading } from 'assets/icons/loading.svg'
 import { ReactComponent as Close } from 'assets/icons/close-circle.svg'
 import NFTImagePlaceholder from 'assets/NFT.png'
+import UploadModal from 'views/components/UploadModal';
 
 function UploadSinglePage() {
     const [isSaving, setIsSaving] = useState(false)
@@ -19,6 +20,7 @@ function UploadSinglePage() {
     const [royalties, setRoyalties] = useState('');
     const [size, setSize] = useState('');
     const [property, setProperty] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(true)
 
     const handleDescriptionChange = (value) => {
         console.log('Item Name:', value);
@@ -44,8 +46,15 @@ function UploadSinglePage() {
         setItemName(null)
     }
 
+    const handleCloseButtonClick = () => {
+        setIsModalOpen(false);
+      };
+
     return (
         <div className='upload-single'>
+            {
+                isModalOpen && <UploadModal onCloseButtonClick={handleCloseButtonClick} />
+            }
             <div className='upload-single--item'>
                 <div className='item-header'>
                     <h2 className='font-headline--2'>

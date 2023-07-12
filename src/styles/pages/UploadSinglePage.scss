@@ -8,6 +8,7 @@
     &-preview {
         display: flex;
         flex-direction: column;
+        height: fit-content;
         box-shadow: 0 64px 64px -48px rgba(31, 47, 70, 0.12);
 
         &--clear {
