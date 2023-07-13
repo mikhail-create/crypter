@@ -41,9 +41,15 @@ function DiscoverSection() {
   const [category, setCategory] = useState('All items');
 
   const handleCategoryChange = (newCategory) => {
-    if (category === 'All items' && newCategory === 'All items') { }
-    else if (category === newCategory) { setCategory('All items') }
-    else { setCategory(newCategory) }
+    setCategory((prevCategory) => {
+      if (prevCategory === 'All items' && newCategory === 'All items') {
+        return prevCategory;
+      } else if (prevCategory === newCategory) {
+        return 'All items';
+      } else {
+        return newCategory;
+      }
+    });
   };
 
   const handleSliderChange = (newValue) => {
@@ -72,9 +78,9 @@ function DiscoverSection() {
         <DropDown label='price' items={['Highest price', 'Lowest price', 'Popular', 'Newest']} />
         <DropDown label='likes' items={['Most liked', 'Least liked']} />
         <DropDown label='creator' items={['Verified only', 'All creators', 'Newest creators']} />
-        <div className="discover-filters--price"> 
+        <div className="discover-filters--price">
           <label className='font-hairline--2'>
-                        Price range
+            Price range
           </label>
           <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
         </div>

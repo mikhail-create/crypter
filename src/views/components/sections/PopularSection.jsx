@@ -10,16 +10,16 @@ function PopularSection() {
   const carouselRef = useRef(null);
 
   const slides = [
-    <SliderCard rank={1} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={2} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={3} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={4} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={5} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={6} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={7} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={8} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={9} name='Edd Harris' wallet={2.456} />,
-    <SliderCard rank={10} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={1} rank={1} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={2} rank={2} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={3} rank={3} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={4} rank={4} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={5} rank={5} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={6} rank={6} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={7} rank={7} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={8} rank={8} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={9} rank={9} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={10} rank={10} name='Edd Harris' wallet={2.456} />,
   ]
 
   const handlePrevSlide = () => {
@@ -35,10 +35,10 @@ function PopularSection() {
       <div className='popular-header'>
         <div className='popular-header--category'>
           <span className='font-body--1-bold'>
-                        Popular
+            Popular
           </span>
           <div className='font-headline--3'>
-                        Sellers
+            Sellers
             <ArrowDown className='arrow-down' />
           </div>
         </div>

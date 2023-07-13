@@ -55,10 +55,20 @@ function UploadSinglePage() {
   };
 
   const clearInputs = () => {
+    console.log({
+      itemName,
+      description,
+      royalties,
+      property,
+      size
+    });
     setSelectedImage(null)
     setDescription(null)
     setIsSaving(null)
     setItemName(null)
+    setRoyalties(null)
+    setProperty(null)
+    setSize(null)
   }
 
   const handleCloseButtonClick = () => {
@@ -73,16 +83,16 @@ function UploadSinglePage() {
       <div className='upload-single--item'>
         <div className='item-header'>
           <h2 className='font-headline--2'>
-                        Create single collectible
+            Create single collectible
           </h2>
           <Button text='Switch to Multiple' path='/upload/multiple' />
         </div>
         <div className='item-upload'>
           <span className='font-body--2-bold'>
-                        Upload file
+            Upload file
           </span>
           <span className='font-caption--2'>
-                        Drag or choose your file to upload
+            Drag or choose your file to upload
           </span>
           <div className='item-upload--dropzone'>
             <DropZone accept='.png, .gif, .webp, .mp3, .mp4' maxSize='1GB' onFileUpload={handleFileUpload} />
@@ -113,10 +123,10 @@ function UploadSinglePage() {
           <div className='item-detail--property'>
             <div className='property--column'>
               <label className='font-body--2-bold'>
-                                Put on sale
+                Put on sale
               </label>
               <span className='font-caption--2'>
-                                You’ll receive bids on this item
+                You’ll receive bids on this item
               </span>
             </div>
             <ToggleButton />
@@ -124,30 +134,30 @@ function UploadSinglePage() {
           <div className='item-detail--property'>
             <div className='property--column'>
               <label className='font-body--2-bold'>
-                                Instant sale price
+                Instant sale price
               </label>
               <span className='font-caption--2'>
-                                Enter the price for which the item will be instantly sold                            </span>
+                Enter the price for which the item will be instantly sold                            </span>
             </div>
             <ToggleButton />
           </div>
           <div className='item-detail--property'>
             <div className='property--column'>
               <label className='font-body--2-bold'>
-                                Unlock once purchased
+                Unlock once purchased
               </label>
               <span className='font-caption--2'>
-                                Content will be unlocked after successful transaction                            </span>
+                Content will be unlocked after successful transaction                            </span>
             </div>
             <ToggleButton />
           </div>
           <div className='item-detail--property'>
             <div className='property--column'>
               <label className='font-body--2-bold'>
-                                Choose collection
+                Choose collection
               </label>
               <span className='font-caption--2'>
-                                Choose an exiting collection or create a new one
+                Choose an exiting collection or create a new one
               </span>
             </div>
           </div>
@@ -156,7 +166,7 @@ function UploadSinglePage() {
               <Plus />
             </div>
             <span className='font-button--2'>
-                            Create <br /> collection
+              Create <br /> collection
             </span>
           </div>
         </div>
@@ -164,14 +174,14 @@ function UploadSinglePage() {
           <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight />} />
           {
             isSaving &&
-                        <div className='item-actions--saving'>
-                          <span className='font-button--1'>
-                                Auto saving
-                          </span>
-                          <div className='item-actions--spinner'>
-                            <Loading />
-                          </div>
-                        </div>
+            <div className='item-actions--saving'>
+              <span className='font-button--1'>
+                Auto saving
+              </span>
+              <div className='item-actions--spinner'>
+                <Loading />
+              </div>
+            </div>
           }
         </div>
       </div>
@@ -187,7 +197,7 @@ function UploadSinglePage() {
         <div className='upload-single-preview--clear' onClick={clearInputs}>
           <Close />
           <span className='font-button--1'>
-                        Clear all
+            Clear all
           </span>
         </div>
       </div>

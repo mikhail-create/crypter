@@ -66,7 +66,7 @@ function ConnectQRGenerator() {
               </div>
               <div className='field'>
                 <input type='checkbox' name='rules' id='rulesCheckbox' onChange={handleTermsConfirmation} />
-                <label htmlFor='rulesCheckbox'>I agree to Stack's terms of service</label>
+                <label htmlFor='rulesCheckbox'>I agree to Stack&apos;s terms of service</label>
               </div>
             </div>
             <div className='connect-qr--actions'>
