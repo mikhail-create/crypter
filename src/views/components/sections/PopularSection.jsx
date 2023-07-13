@@ -7,73 +7,73 @@ import SliderCard from '../SliderCard';
 import DropDown from 'views/components/shared/DropDown';
 
 function PopularSection() {
-    const carouselRef = useRef(null);
+  const carouselRef = useRef(null);
 
-    const slides = [
-        <SliderCard rank={1} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={2} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={3} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={4} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={5} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={6} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={7} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={8} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={9} name='Edd Harris' wallet={2.456} />,
-        <SliderCard rank={10} name='Edd Harris' wallet={2.456} />,
-    ]
+  const slides = [
+    <SliderCard rank={1} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={2} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={3} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={4} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={5} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={6} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={7} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={8} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={9} name='Edd Harris' wallet={2.456} />,
+    <SliderCard rank={10} name='Edd Harris' wallet={2.456} />,
+  ]
 
-    const handlePrevSlide = () => {
-        carouselRef.current.slidePrev();
-    };
+  const handlePrevSlide = () => {
+    carouselRef.current.slidePrev();
+  };
 
-    const handleNextSlide = () => {
-        carouselRef.current.slideNext();
-    };
+  const handleNextSlide = () => {
+    carouselRef.current.slideNext();
+  };
 
-    return (
-        <section className='popular'>
-            <div className='popular-header'>
-                <div className='popular-header--category'>
-                    <span className='font-body--1-bold'>
+  return (
+    <section className='popular'>
+      <div className='popular-header'>
+        <div className='popular-header--category'>
+          <span className='font-body--1-bold'>
                         Popular
-                    </span>
-                    <div className='font-headline--3'>
+          </span>
+          <div className='font-headline--3'>
                         Sellers
-                        <ArrowDown className='arrow-down' />
-                    </div>
-                </div>
-                <div className="popular-header-select">
-                    <DropDown items={['Today', 'Week']} />
-                </div>
-            </div>
-            <div className='popular-slider'>
-                <button className='popular-slider--control' onClick={handlePrevSlide}>
-                    <ArrowLeft />
-                </button>
-                <div className='popular-slider--list'>
-                    <Carousel
-                        itemsToShow={5}
-                        pagination={false}
-                        ref={carouselRef}
-                        showArrows={false}
-                        itemPadding={[0, 32, 0, 32]}
-                    >
-                        {slides.map((slide, index) => (
-                            <div
-                                key={index}
-                                className={`slider--item ${index === 0 ? 'active' : ''}`}
-                            >
-                                {slide}
-                            </div>
-                        ))}
-                    </Carousel>
-                </div>
-                <button className='popular-slider--control' onClick={handleNextSlide}>
-                    <ArrowRight />
-                </button>
-            </div>
-        </section>
-    )
+            <ArrowDown className='arrow-down' />
+          </div>
+        </div>
+        <div className="popular-header-select">
+          <DropDown items={['Today', 'Week']} />
+        </div>
+      </div>
+      <div className='popular-slider'>
+        <button className='popular-slider--control' onClick={handlePrevSlide}>
+          <ArrowLeft />
+        </button>
+        <div className='popular-slider--list'>
+          <Carousel
+            itemsToShow={5}
+            pagination={false}
+            ref={carouselRef}
+            showArrows={false}
+            itemPadding={[0, 32, 0, 32]}
+          >
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`slider--item ${index === 0 ? 'active' : ''}`}
+              >
+                {slide}
+              </div>
+            ))}
+          </Carousel>
+        </div>
+        <button className='popular-slider--control' onClick={handleNextSlide}>
+          <ArrowRight />
+        </button>
+      </div>
+    </section>
+  )
 }
 
 export default PopularSection

@@ -9,22 +9,22 @@ import DiscoverSection from 'views/components/sections/DiscoverSection'
 import CTASection from 'views/components/sections/CTASection'
 
 function HomePage() {
-    useEffect(() => {
-        document.title = 'Crypter'
-    }, [])
+  useEffect(() => {
+    document.title = 'Crypter'
+  }, [])
 
-    return (
-        <div className='home'>
-            <ContentSection />
-            <AuctionSection />
-            <FeedSection />
-            <PopularSection />
-            <HotBidSection />
-            <HotCollectionSection />
-            <DiscoverSection />
-            <CTASection />
-        </div>
-    )
+  return (
+    <div className='home'>
+      <ContentSection />
+      <AuctionSection />
+      <FeedSection />
+      <PopularSection />
+      <HotBidSection />
+      <HotCollectionSection />
+      <DiscoverSection />
+      <CTASection />
+    </div>
+  )
 }
 
 export default HomePage

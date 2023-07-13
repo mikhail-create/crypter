@@ -6,27 +6,27 @@ import styles from './MainLayout.module.scss';
 import Footer from 'views/components/footer/Footer';
 
 function MainLayout() {
-    return (
-        <>
-            <Header />
-            <main>
-                <div className={styles.layout}>
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Routes>
-                            {routes.map(route => (
-                                <Route
-                                    key={route.path}
-                                    path={route.path}
-                                    element={route.component}
-                                />
-                            ))}
-                        </Routes>
-                    </Suspense>
-                </div>
-            </main>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <main>
+        <div className={styles.layout}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              {routes.map(route => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.component}
+                />
+              ))}
+            </Routes>
+          </Suspense>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default MainLayout;

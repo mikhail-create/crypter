@@ -9,80 +9,80 @@ import { ReactComponent as ScatterUp } from 'assets/icons/scatter-up.svg';
 import CustomLabel from 'views/components/shared/CustomLabel';
 
 function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) {
-    const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
-    const handleMouseEnter = () => {
-        setIsHovered(true)
-    }
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+  }
 
-    const handleMouseLeave = () => {
-        setIsHovered(false)
-    }
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
 
-    return (
-        <div className='card-medium'
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
+  return (
+    <div className='card-medium'
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
 
-            {
-                isHovered &&
+      {
+        isHovered &&
                 <div className='card-hover' >
-                    <div className='card-hover--header'>
-                        <span className='card-hover--indicator font-hairline--2'>
+                  <div className='card-hover--header'>
+                    <span className='card-hover--indicator font-hairline--2'>
                             purchasing !
-                        </span>
-                        <button className='card-hover--like'>
-                            <Heart />
-                        </button>
-                    </div>
-                    <div className='card-hover--button'>
-                        <Button
-                            text='Place a bid'
-                            isColored={true}
-                            icon={<ScatterUp />}
-                        />
-                    </div>
-                </div>
-            }
-            <img srcSet={imgSrc} alt={title} />
-            <div className='card-medium-description'>
-                <div className='stats'>
-                    <div className='stats--title font-body--2-bold'>
-                        {title}
-                    </div>
-                    <div className='stats--price font-hairline--2'>
-                        <CustomLabel text={instaPrice + ' ETH'} isPopularGhost={true} />
-                    </div>
-                </div>
-                <div className='stats'>
-                    <div className='stats--bidders'>
-                        <img srcSet={AvatarImage} />
-                        <img srcSet={AvatarImage01} />
-                        <img srcSet={AvatarImage02} />
-                    </div>
-                    <span className='stats--stock font-caption--1-bold'>
-                        {stockAmount + ' in stock'}
                     </span>
+                    <button className='card-hover--like'>
+                      <Heart />
+                    </button>
+                  </div>
+                  <div className='card-hover--button'>
+                    <Button
+                      text='Place a bid'
+                      isColored={true}
+                      icon={<ScatterUp />}
+                    />
+                  </div>
                 </div>
-                <div className='card-medium--divider'></div>
-                <div className='stats'>
-                    <div className='stats-highest'>
-                        <CandlesticksUp />
-                        <span className='stats-highest--label font-caption--2'>
-                            Highest bid
-                        </span>
-                        <span className='stats-highest--bid font-caption--2-bold'>
-                            {bid + ' ETH'}
-                        </span>
-                    </div>
-                    <div className='stats--indicator font-caption--2'>
-                        {isNewBids && 'New bid 🔥'}
-                    </div>
-                </div>
-            </div>
+      }
+      <img srcSet={imgSrc} alt={title} />
+      <div className='card-medium-description'>
+        <div className='stats'>
+          <div className='stats--title font-body--2-bold'>
+            {title}
+          </div>
+          <div className='stats--price font-hairline--2'>
+            <CustomLabel text={instaPrice + ' ETH'} isPopularGhost={true} />
+          </div>
         </div>
-    )
+        <div className='stats'>
+          <div className='stats--bidders'>
+            <img srcSet={AvatarImage} />
+            <img srcSet={AvatarImage01} />
+            <img srcSet={AvatarImage02} />
+          </div>
+          <span className='stats--stock font-caption--1-bold'>
+            {stockAmount + ' in stock'}
+          </span>
+        </div>
+        <div className='card-medium--divider'></div>
+        <div className='stats'>
+          <div className='stats-highest'>
+            <CandlesticksUp />
+            <span className='stats-highest--label font-caption--2'>
+                            Highest bid
+            </span>
+            <span className='stats-highest--bid font-caption--2-bold'>
+              {bid + ' ETH'}
+            </span>
+          </div>
+          <div className='stats--indicator font-caption--2'>
+            {isNewBids && 'New bid 🔥'}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default CardMedium

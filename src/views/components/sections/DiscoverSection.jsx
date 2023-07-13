@@ -9,99 +9,98 @@ import { ReactComponent as Loading } from 'assets/icons/loading.svg';
 import NFTList from '_helpers/NFTList';
 
 function DiscoverSection() {
-    const [displayedItems, setDisplayedItems] = useState([]);
-    const [lastLoadedIndex, setLastLoadedIndex] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
+  const [displayedItems, setDisplayedItems] = useState([]);
+  const [lastLoadedIndex, setLastLoadedIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        // Загрузка первых 8 карточек
-        const itemsPerPage = 8;
-        const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
-        setDisplayedItems(nextItems);
-        setLastLoadedIndex(lastLoadedIndex + itemsPerPage);
-    }, []);
+  useEffect(() => {
+    // Загрузка первых 8 карточек
+    const itemsPerPage = 8;
+    const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
+    setDisplayedItems(nextItems);
+    setLastLoadedIndex(lastLoadedIndex + itemsPerPage);
+  }, []);
 
-    const loadMoreItems = () => {
-        if (isLoading) {
-            return;
-        }
+  const loadMoreItems = () => {
+    if (isLoading) {
+      return;
+    }
 
-        setIsLoading(true);
+    setIsLoading(true);
 
-        setTimeout(() => {
-            const itemsPerPage = 8;
-            const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
-            setDisplayedItems(prevItems => [...prevItems, ...nextItems]);
-            setLastLoadedIndex(prevIndex => prevIndex + itemsPerPage);
-            setIsLoading(false);
-        }, 500); // Задержка в 0.5 секунды
-    };
+    setTimeout(() => {
+      const itemsPerPage = 8;
+      const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
+      setDisplayedItems(prevItems => [...prevItems, ...nextItems]);
+      setLastLoadedIndex(prevIndex => prevIndex + itemsPerPage);
+      setIsLoading(false);
+    }, 500); // Задержка в 0.5 секунды
+  };
 
+  const [sliderValue, setSliderValue] = useState(5);
+  const [category, setCategory] = useState('All items');
 
-    const [sliderValue, setSliderValue] = useState(5);
-    const [category, setCategory] = useState('All items');
+  const handleCategoryChange = (newCategory) => {
+    if (category === 'All items' && newCategory === 'All items') { }
+    else if (category === newCategory) { setCategory('All items') }
+    else { setCategory(newCategory) }
+  };
 
-    const handleCategoryChange = (newCategory) => {
-        if (category === 'All items' && newCategory === 'All items') { }
-        else if (category === newCategory) { setCategory('All items') }
-        else { setCategory(newCategory) }
-    };
+  const handleSliderChange = (newValue) => {
+    setSliderValue(newValue);
+  };
 
-    const handleSliderChange = (newValue) => {
-        setSliderValue(newValue);
-    };
-
-    return (
-        <section className="discover">
-            <h3 className="discover--title font-headline--3">Discover</h3>
-            <div className="discover-category">
-                <div className="discover-category--filter">
-                    <DropDown items={['Recently added', 'Total bids', 'Recently added', 'Total bids']} />
-                </div>
-                <nav className="discover-category--navigation">
-                    <NavItem handleCategoryChange={handleCategoryChange} name="All items" isSelected={category === 'All items'} />
-                    <NavItem handleCategoryChange={handleCategoryChange} name="Art" isSelected={category === 'Art'} />
-                    <NavItem handleCategoryChange={handleCategoryChange} name="Game" isSelected={category === 'Game'} />
-                    <NavItem handleCategoryChange={handleCategoryChange} name="Photography" isSelected={category === 'Photography'} />
-                    <NavItem handleCategoryChange={handleCategoryChange} name="Music" isSelected={category === 'Music'} />
-                    <NavItem handleCategoryChange={handleCategoryChange} name="Video" isSelected={category === 'Video'} />
-                </nav>
-                <Button text='Filter' isColored={true} icon={<Close />} />
-            </div>
-            <div className="discover--divider"></div>
-            <div className="discover-filters">
-                <DropDown label='price' items={['Highest price', 'Lowest price', 'Popular', 'Newest']} />
-                <DropDown label='likes' items={['Most liked', 'Least liked']} />
-                <DropDown label='creator' items={['Verified only', 'All creators', 'Newest creators']} />
-                <div className="discover-filters--price"> 
-                    <label className='font-hairline--2'>
+  return (
+    <section className="discover">
+      <h3 className="discover--title font-headline--3">Discover</h3>
+      <div className="discover-category">
+        <div className="discover-category--filter">
+          <DropDown items={['Recently added', 'Total bids', 'Recently added', 'Total bids']} />
+        </div>
+        <nav className="discover-category--navigation">
+          <NavItem handleCategoryChange={handleCategoryChange} name="All items" isSelected={category === 'All items'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Art" isSelected={category === 'Art'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Game" isSelected={category === 'Game'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Photography" isSelected={category === 'Photography'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Music" isSelected={category === 'Music'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Video" isSelected={category === 'Video'} />
+        </nav>
+        <Button text='Filter' isColored={true} icon={<Close />} />
+      </div>
+      <div className="discover--divider"></div>
+      <div className="discover-filters">
+        <DropDown label='price' items={['Highest price', 'Lowest price', 'Popular', 'Newest']} />
+        <DropDown label='likes' items={['Most liked', 'Least liked']} />
+        <DropDown label='creator' items={['Verified only', 'All creators', 'Newest creators']} />
+        <div className="discover-filters--price"> 
+          <label className='font-hairline--2'>
                         Price range
-                    </label>
-                    <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
-                </div>
+          </label>
+          <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
+        </div>
 
-            </div>
-            <div className="discover-list">
-                {displayedItems.map((item, index) => (
-                    <CardMedium
-                        key={item.name + index}
-                        title={item.name}
-                        instaPrice={item.price}
-                        stockAmount={item.stockAmount}
-                        bid={item.highestBid}
-                        isNewBids={item.newBid}
-                        imgSrc={item.src}
-                    />
-                ))}
-                <div onClick={loadMoreItems} className="discover-list--button">
-                    {
-                        !isLoading ? <Button text='Load more' /> : <Button text='Loading' icon={<Loading />} />
-                    }
-                </div>
-            </div>
+      </div>
+      <div className="discover-list">
+        {displayedItems.map((item, index) => (
+          <CardMedium
+            key={item.name + index}
+            title={item.name}
+            instaPrice={item.price}
+            stockAmount={item.stockAmount}
+            bid={item.highestBid}
+            isNewBids={item.newBid}
+            imgSrc={item.src}
+          />
+        ))}
+        <div onClick={loadMoreItems} className="discover-list--button">
+          {
+            !isLoading ? <Button text='Load more' /> : <Button text='Loading' icon={<Loading />} />
+          }
+        </div>
+      </div>
 
-        </section >
-    );
+    </section >
+  );
 }
 
 export default DiscoverSection;
