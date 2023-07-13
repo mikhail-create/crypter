@@ -26,6 +26,10 @@
             display: flex;
             flex-direction: column;
 
+            .selected {
+                border: 2px solid $neutral-6;
+            }
+
             &--item {
                 height: 128px;
                 width: 544px;
@@ -37,7 +41,7 @@
                 justify-content: space-between;
                 border-radius: 16px;
                 border: 2px solid $neutral-8;
-                transition: .5s;
+                transition: 0.5s;
 
                 .item {
                     display: flex;
@@ -52,18 +56,35 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        box-sizing: border-box;
+                    }
+
+                    .purple--circle {
+                        border: 2px solid $primary-purple;
                     }
 
                     .purple {
                         background-color: $primary-purple;
                     }
 
+                    .green--circle {
+                        border: 2px solid $primary-green;
+                    }
+
                     .green {
                         background-color: $primary-green;
                     }
 
+                    .blue--circle {
+                        border: 2px solid $primary-blue;
+                    }
+
                     .blue {
                         background-color: $primary-blue;
+                    }
+
+                    .rose--circle {
+                        border: 2px solid $primary-rose;
                     }
 
                     .rose {
@@ -75,6 +96,14 @@
                     cursor: pointer;
                     border: 2px solid $neutral-6;
                 }
+            }
+        }
+
+        &-qr {
+            &--preview {
+                width: 416px;
+                height: 512px;
+                border-radius: 24px;
             }
         }
     }

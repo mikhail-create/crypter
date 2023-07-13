@@ -1,70 +1,89 @@
-import React from 'react'
-import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg'
-import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
-import { ReactComponent as Wallet } from 'assets/icons/wallet.svg'
+import React, { useState } from 'react';
+import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
+import { ReactComponent as Wallet } from 'assets/icons/wallet.svg';
+import { ReactComponent as Check } from 'assets/icons/check.svg';
+import QRCodePreview from 'assets/QR.png';
+import ConnectQRGenerator from 'views/components/ConnectQRGenerator';
+
+const walletsData = [
+    {
+        id: 1,
+        name: 'Formatic',
+        color: 'purple',
+        checkColor: '#9757D7',
+    },
+    {
+        id: 2,
+        name: 'Coinbase Wallet',
+        color: 'blue',
+        checkColor: '#3772FF',
+    },
+    {
+        id: 3,
+        name: 'MyEtherWallet',
+        color: 'green',
+        checkColor: '#45B26B',
+    },
+    {
+        id: 4,
+        name: 'Wallet Connect',
+        color: 'rose',
+        checkColor: '#EF466F',
+    },
+];
 
 function ConnectPage() {
+    const [selectedWallet, setSelectedWallet] = useState(null);
+
+    const handleWalletSelect = (walletId) => {
+        if (walletId == selectedWallet) {
+            setSelectedWallet(null);
+        } else {
+            setSelectedWallet(walletId);
+        }
+    };
+
     return (
         <div className='connect'>
             <div className='connect--header'>
-                <ArrowLeft fill="white" width={24} height={15} />
-                <h2 className='font-headline--2'>
-                    Connect your wallet
-                </h2>
+                <ArrowLeft fill='white' width={24} height={15} />
+                <h2 className='font-headline--2'>Connect your wallet</h2>
             </div>
-            <div className='connect--divider'>
-
-            </div>
+            <div className='connect--divider'></div>
             <div className='connect-content'>
                 <div className='connect-wallets'>
-                    <div className='connect-wallets--item'>
-                        <div className='item'>
-                            <div className='item--icon purple'>
-                                <Wallet />
+                    {walletsData.map((wallet) => (
+                        <div
+                            key={wallet.id}
+                            className={`connect-wallets--item ${selectedWallet === wallet.id ? 'selected' : ''}`}
+                            onClick={() => handleWalletSelect(wallet.id)}
+                        >
+                            <div className='item'>
+                                <div className={`item--icon ${selectedWallet === wallet.id ? `${wallet.color}--circle` : wallet.color}`}>
+                                    {selectedWallet === wallet.id ? (
+                                        <Check fill={wallet.checkColor} />
+                                    ) : (
+                                        <Wallet />
+                                    )}
+                                </div>
+                                <span className='font-body--1-bold'>{wallet.name}</span>
                             </div>
-                            <span className='font-body--1-bold'>
-                                Formatic
-                            </span>
+                            {selectedWallet === wallet.id && <ArrowRight fill='black' />}
                         </div>
-                        <ArrowRight fill='black' />
-                    </div>
-                    <div className='connect-wallets--item'>
-                        <div className='item'>
-                            <div className='item--icon blue'>
-                                <Wallet />
-                            </div>
-                            <span className='font-body--1-bold'>
-                                Coinbase Wallet
-                            </span>
-                        </div>
-                        <ArrowRight fill='black' />
-                    </div>
-                    <div className='connect-wallets--item'>
-                        <div className='item'>
-                            <div className='item--icon green'>
-                                <Wallet />
-                            </div>
-                            <span className='font-body--1-bold'>
-                                MyEtherWallet
-                            </span>
-                        </div>
-                        <ArrowRight fill='black' />
-                    </div>
-                    <div className='connect-wallets--item'>
-                        <div className='item'>
-                            <div className='item--icon rose'>
-                                <Wallet />
-                            </div>
-                            <span className='font-body--1-bold'>
-                                Wallet Connect
-                            </span>
-                        </div>
-                        <ArrowRight fill='black' />
-                    </div>
+                    ))}
+                </div>
+                <div className='content-qr--preview'>
+                    {
+                        selectedWallet ?
+                            <ConnectQRGenerator />
+                            :
+                            <img srcSet={QRCodePreview} alt='QR Code Preview' />
+                    }
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default ConnectPage
+export default ConnectPage;

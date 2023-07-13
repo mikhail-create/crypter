@@ -1,0 +1,73 @@
+.connect-qr {
+    &--wrapper {
+        width: 448px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .scan-qr {
+        gap: 24px;
+    }
+
+    .create-account {
+        gap: 40px;
+    }
+
+    &--header {
+        > span {
+            margin-top: 8px;
+            color: $neutral-4;
+        }
+
+        > p {
+            margin-top: 8px;
+            color: $neutral-4;
+
+            > a {
+                color: $neutral-2;
+                transition: 500ms;
+
+                &:hover {
+                    color: $primary-blue;
+                }
+            }
+        }
+    }
+
+    &--content {
+        padding: 83px;
+
+        .qr-card {
+            padding: 83px;
+            box-sizing: border-box;
+            border: 1px solid $neutral-6;
+            border-radius: 12px;
+            box-shadow: 0 64px 64px -48px rgba(31, 47, 70, 0.15);
+        }
+    }
+
+    &--fields {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .field {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            > input {
+                width: 22px;
+                height: 22px;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &--actions {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+}
