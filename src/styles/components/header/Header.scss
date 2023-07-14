@@ -1,70 +1,117 @@
 header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .layout {
-    width: 1440px;
-    height: 80px;
+  width: 1440px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $neutral-6;
+  padding: 0 160px;
+  box-sizing: border-box;
+
+  &-left {
+    width: fit-content;
+    align-items: center;
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid $neutral-6;
-    padding: 0 160px;
-    box-sizing: border-box;
+    gap: 32px;
 
-    &-left {
-        width: fit-content;
-        align-items: center;
-        display: flex;
-        gap: 32px;
-
-        .left-logo {
-            &--image {
-                img {
-                    width: 126px;
-                }
-            }
+    .left-logo {
+      &--image {
+        img {
+          width: 126px;
         }
-
-        .left--divider {
-            width: 2px;
-            height: 40px;
-            background-color: $neutral-6;
-        }
-
-        .left--link {
-            color: $neutral-2;
-            cursor: pointer;
-        }
+      }
     }
 
-    &-right {
-        width: fit-content;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        gap: 24px;
-
-        .right--buttons {
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-        }
+    .left--divider {
+      width: 2px;
+      height: 40px;
+      background-color: $neutral-6;
     }
+
+    .left--link {
+      color: $neutral-2;
+      cursor: pointer;
+    }
+  }
+
+  &-right {
+    width: fit-content;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+    &--buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    &--avatar,
+    &--menu {
+      display: none;
+    }
+  }
 }
 
-@media screen and (max-width: $tablet-size) {
-    .layout {
-        width: $tablet-size;
-        padding: 0 80px;
+@media (min-width: $tablet-size) and (max-width: calc( $desktop-size - 1px)) {
+  .layout {
+    width: $tablet-size;
+    padding: 0 80px;
 
-        .left--divider {
-            display: none;
-        }
-
-        .left--link {
-            display: none;
-        }
+    .left--divider {
+      display: none;
     }
+
+    .left--link {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .layout {
+    width: $mobile-size;
+    padding: 48px 32px 24px 32px;
+    height: fit-content;
+    border-bottom: none;
+
+    .left--divider {
+      display: none;
+    }
+
+    .left--link {
+      display: none;
+    }
+
+    .layout-right {
+      gap: 20px;
+
+      &--search {
+        display: none;
+      }
+
+      &--buttons {
+        display: none;
+      }
+
+      &--avatar {
+        display: inline;
+        > img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      &--menu {
+        display: inline;
+        cursor: pointer;
+      }
+    }
+  }
 }
