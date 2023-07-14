@@ -76,7 +76,7 @@ header {
 
 @media (max-width: calc($tablet-size - 1px)) {
   .layout {
-    width: $mobile-size;
+    width: 100%;
     padding: 48px 32px 24px 32px;
     height: fit-content;
     border-bottom: none;
