@@ -15,8 +15,8 @@ function CreateItemCard({ isSingle }) {
         <>
           <img srcSet={SingleItemImageMini} alt='Create Single Item' />
           <img srcSet={SingleItemImage} alt='Create Single Item' />
-          <Link to={'/upload/single'} htmlFor='createButton' className='font-body--2-bold'>
-            Create Multiple
+          <Link to={'/upload/single'} htmlFor='createButton' className='font-body--2-bold create-item--link'>
+            Create Single
           </Link>
           <button id='createButton'>
             <ArrowRight fill='#777E90' />
@@ -29,7 +29,7 @@ function CreateItemCard({ isSingle }) {
         <>
           <img srcSet={MultipleItemImageMini} alt='Create Multiple Item' />
           <img srcSet={MultipleItemImage} alt='Create Multiple Item' />
-          <Link to='/upload/multiple' htmlFor='createButton' className='font-body--2-bold'>
+          <Link to='/upload/multiple' htmlFor='createButton' className='font-body--2-bold create-item--link'>
             Create Multiple
           </Link>
           <button id='createButton'>

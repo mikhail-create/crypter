@@ -1,0 +1,160 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 96px;
+  padding: 96px 160px;
+  box-sizing: border-box;
+
+  &--preview {
+    > img {
+      width: 640px;
+      height: 768px;
+      border-radius: 16px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &--stats {
+      > h3 {
+        margin-bottom: 8px;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        color: $neutral-4;
+      }
+    }
+
+    &--description {
+      > p {
+        color: $neutral-4;
+
+        > a {
+          color: $neutral-2;
+          transition: 500ms;
+
+          &:hover {
+            color: $primary-blue;
+          }
+        }
+      }
+    }
+
+    &--filter {
+      box-sizing: border-box;
+      height: 40px;
+      border-radius: 36px;
+      border: 2px solid $neutral-6;
+      padding: 0 4px;
+
+      > nav {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+
+    &--data {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .data--item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $neutral-6;
+
+        > img {
+          width: 48px;
+          height: 48px;
+          border-radius: 100%;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+
+          > span {
+            color: $neutral-2;
+
+            &:first-child {
+              color: $neutral-4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-actions {
+    width: 100%;
+    height: 240px;
+    border: 1px solid $neutral-6;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &--bid {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+
+      > img {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+      }
+
+      .bid-info {
+        display: flex;
+        flex-direction: column;
+        color: $neutral-2;
+
+        &--row {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+
+          .color--gray {
+            color: $neutral-4;
+          }
+        }
+      }
+    }
+
+    &--buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 8px;
+    }
+
+    &--fee {
+      display: flex;
+      gap: 12px;
+      color: $neutral-4;
+
+      .color--black {
+        color: $neutral-2;
+      }
+    }
+  }
+}

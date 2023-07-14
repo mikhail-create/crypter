@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
 import { ReactComponent as Wallet } from 'assets/icons/wallet.svg';
@@ -34,6 +34,9 @@ const walletsData = [
 ];
 
 function ConnectPage() {
+  useEffect(() => {
+    document.title = 'Connect Wallet'
+  }, [])
   const [selectedWallet, setSelectedWallet] = useState(null);
 
   const handleWalletSelect = (walletId) => {
@@ -59,8 +62,8 @@ function ConnectPage() {
               className={`connect-wallets--item ${selectedWallet === wallet.id ? 'selected' : ''}`}
               onClick={() => handleWalletSelect(wallet.id)}
             >
-              <div className='item'>
-                <div className={`item--icon ${selectedWallet === wallet.id ? `${wallet.color}--circle` : wallet.color}`}>
+              <div className='wallet-item'>
+                <div className={`wallet-item--icon ${selectedWallet === wallet.id ? `${wallet.color}--circle` : wallet.color}`}>
                   {selectedWallet === wallet.id ? (
                     <Check fill={wallet.checkColor} />
                   ) : (

@@ -12,6 +12,8 @@ function DiscoverSection() {
   const [displayedItems, setDisplayedItems] = useState([]);
   const [lastLoadedIndex, setLastLoadedIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [sliderValue, setSliderValue] = useState(5);
+  const [category, setCategory] = useState('All items');
 
   useEffect(() => {
     // Загрузка первых 8 карточек
@@ -37,19 +39,10 @@ function DiscoverSection() {
     }, 500); // Задержка в 0.5 секунды
   };
 
-  const [sliderValue, setSliderValue] = useState(5);
-  const [category, setCategory] = useState('All items');
-
   const handleCategoryChange = (newCategory) => {
-    setCategory((prevCategory) => {
-      if (prevCategory === 'All items' && newCategory === 'All items') {
-        return prevCategory;
-      } else if (prevCategory === newCategory) {
-        return 'All items';
-      } else {
-        return newCategory;
-      }
-    });
+    setCategory((prevCategory) =>
+      prevCategory === newCategory ? 'All Items' : newCategory
+    );
   };
 
   const handleSliderChange = (newValue) => {
