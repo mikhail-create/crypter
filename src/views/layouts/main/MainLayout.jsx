@@ -17,7 +17,7 @@ function MainLayout() {
                 <Route
                   key={route.path}
                   path={route.path}
-                  element={route.component}
+                  element={<route.component />} // Вызов компонента
                 />
               ))}
             </Routes>

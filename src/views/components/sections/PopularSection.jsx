@@ -48,7 +48,7 @@ function PopularSection() {
       </div>
       <div className='popular-slider'>
         <button className='popular-slider--control' onClick={handlePrevSlide}>
-          <ArrowLeft />
+          <ArrowLeft fill='black' />
         </button>
         <div className='popular-slider--list'>
           <Carousel
@@ -69,7 +69,7 @@ function PopularSection() {
           </Carousel>
         </div>
         <button className='popular-slider--control' onClick={handleNextSlide}>
-          <ArrowRight />
+          <ArrowRight fill='black' />
         </button>
       </div>
     </section>

@@ -37,7 +37,7 @@ function UploadModal({ onCloseButtonClick }) {
       stepName: 'firstStep',
       icon: steps.firstStep ? <Check fill='white' /> : <Upload />,
       buttonText: steps.firstStep ? 'Done' : 'Start now',
-      loadingIcon: steps.firstStepLoading && <Loading />,
+      loadingIcon: steps.firstStepLoading && <Loading fill='white' />,
       isColored: !steps.firstStep,
       isDisabled: false, // Первый шаг всегда доступен
       description: ['Upload files & Mint token', 'Call contract method'],
@@ -47,7 +47,7 @@ function UploadModal({ onCloseButtonClick }) {
       stepName: 'secondStep',
       icon: steps.secondStep ? <Check fill='white' /> : <Pencil />,
       buttonText: steps.secondStep ? 'Done' : 'Start now',
-      loadingIcon: steps.secondStepLoading && <Loading />,
+      loadingIcon: steps.secondStepLoading && <Loading fill='white' />,
       isColored: !steps.secondStep,
       isDisabled: !steps.firstStep,
       description: ['Sign sell order', 'Sign sell order using your wallet'],
@@ -57,7 +57,7 @@ function UploadModal({ onCloseButtonClick }) {
       stepName: 'thirdStep',
       icon: steps.thirdStep ? <Check fill='white' /> : <ShoppingBag />,
       buttonText: steps.thirdStep ? 'Done' : 'Start now',
-      loadingIcon: steps.thirdStepLoading && <Loading />,
+      loadingIcon: steps.thirdStepLoading && <Loading fill='white' />,
       isColored: !steps.thirdStep,
       isDisabled: !steps.secondStep,
       description: ['Sign lock order', 'Sign lock order using your wallet'],
@@ -70,21 +70,21 @@ function UploadModal({ onCloseButtonClick }) {
       <div className="modal-content">
         <div className="modal-content--header">
           <h4 className='font-headline--4'>
-                        Folow steps
+            Folow steps
           </h4>
           <Close className='close' onClick={onCloseButtonClick} height={40} width={40} />
         </div>
 
         {stepsData.map((step, index) => (
           <div key={index} className="modal-content--item">
-            <div className='item'>
+            <div className='conent-item'>
 
-              <div className={`item--icon ${steps[step.stepName] && 'done'}`}>
+              <div className={`conent-item--icon ${steps[step.stepName] && 'done'}`}>
                 {
                   step.icon
                 }
               </div>
-              <div className='item--info'>
+              <div className='conent-item--info'>
                 <span className='font-body--2-bold'>
                   {step.description[0]}
                 </span>

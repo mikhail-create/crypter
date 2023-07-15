@@ -24,9 +24,9 @@ function DropDown({ items, label }) {
       >
         <ul>
           {items &&
-                        items.map((item, index) => (
-                          <DropDownItem itemName={item} key={index} changeDropDownState={changeDropDownState} />
-                        ))}
+            items.map((item, index) => (
+              <DropDownItem itemName={item} key={index} changeDropDownState={changeDropDownState} />
+            ))}
         </ul>
       </div>
     </div>

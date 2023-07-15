@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import { lazy } from 'react';
 
 const HomePage = lazy(() => import('views/pages/HomePage'));
 const UploadPage = lazy(() => import('views/pages/UploadPage'));
@@ -9,23 +9,23 @@ const ItemPage = lazy(() => import('views/pages/ItemPage'));
 const routes = [
   {
     path: '/upload',
-    component: <UploadPage />
+    component: UploadPage
   },
   {
     path: '/upload/single',
-    component: <UploadSinglePage />
+    component: UploadSinglePage
   },
   {
     path: '/connect',
-    component: <ConnectPage />
+    component: ConnectPage
   },
   {
     path: '/item',
-    component: <ItemPage />
+    component: ItemPage
   },
   {
     path: '/',
-    component: <HomePage />
+    component: HomePage
   }
 ];
 

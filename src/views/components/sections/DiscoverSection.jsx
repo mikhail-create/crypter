@@ -1,43 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import CardMedium from 'views/components/CardMedium';
+import React, { useState } from 'react';
 import Button from 'views/components/shared/Button';
 import DropDown from 'views/components/shared/DropDown';
 import NavItem from 'views/components/shared/NavItem';
 import RangeBar from 'views/components/shared/RangeBar';
 import { ReactComponent as Close } from 'assets/icons/close.svg';
-import { ReactComponent as Loading } from 'assets/icons/loading.svg';
-import NFTList from '_helpers/NFTList';
+import ProductsList from 'views/components/ProductsList';
 
 function DiscoverSection() {
-  const [displayedItems, setDisplayedItems] = useState([]);
-  const [lastLoadedIndex, setLastLoadedIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
   const [sliderValue, setSliderValue] = useState(5);
   const [category, setCategory] = useState('All items');
-
-  useEffect(() => {
-    // Загрузка первых 8 карточек
-    const itemsPerPage = 8;
-    const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
-    setDisplayedItems(nextItems);
-    setLastLoadedIndex(lastLoadedIndex + itemsPerPage);
-  }, []);
-
-  const loadMoreItems = () => {
-    if (isLoading) {
-      return;
-    }
-
-    setIsLoading(true);
-
-    setTimeout(() => {
-      const itemsPerPage = 8;
-      const nextItems = NFTList.slice(lastLoadedIndex, lastLoadedIndex + itemsPerPage);
-      setDisplayedItems(prevItems => [...prevItems, ...nextItems]);
-      setLastLoadedIndex(prevIndex => prevIndex + itemsPerPage);
-      setIsLoading(false);
-    }, 500); // Задержка в 0.5 секунды
-  };
 
   const handleCategoryChange = (newCategory) => {
     setCategory((prevCategory) =>
@@ -77,27 +48,8 @@ function DiscoverSection() {
           </label>
           <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
         </div>
-
       </div>
-      <div className="discover-list">
-        {displayedItems.map((item, index) => (
-          <CardMedium
-            key={item.name + index}
-            title={item.name}
-            instaPrice={item.price}
-            stockAmount={item.stockAmount}
-            bid={item.highestBid}
-            isNewBids={item.newBid}
-            imgSrc={item.src}
-          />
-        ))}
-        <div onClick={loadMoreItems} className="discover-list--button">
-          {
-            !isLoading ? <Button text='Load more' /> : <Button text='Loading' icon={<Loading />} />
-          }
-        </div>
-      </div>
-
+      <ProductsList />
     </section >
   );
 }
