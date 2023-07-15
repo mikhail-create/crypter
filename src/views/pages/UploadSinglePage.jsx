@@ -170,16 +170,16 @@ function UploadSinglePage() {
             </span>
           </div>
         </div>
-        <div className='item-actions'>
+        <div className='item--actions'>
           <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight />} />
           {
             isSaving &&
-            <div className='item-actions--saving'>
+            <div className='item--actions--saving'>
               <span className='font-button--1'>
                 Auto saving
               </span>
-              <div className='item-actions--spinner'>
-                <Loading />
+              <div className='item--actions--spinner'>
+                <Loading fill='black'/>
               </div>
             </div>
           }

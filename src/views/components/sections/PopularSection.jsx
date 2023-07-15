@@ -10,7 +10,7 @@ function PopularSection() {
   const carouselRef = useRef(null);
 
   const slides = [
-    <SliderCard key={1} rank={1} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={1} rank={1} name='Victoria Limonova' wallet={9.999} />,
     <SliderCard key={2} rank={2} name='John Smith' wallet={5.678} />,
     <SliderCard key={3} rank={3} name='Emily Johnson' wallet={9.012} />,
     <SliderCard key={4} rank={4} name='Michael Davis' wallet={3.456} />,

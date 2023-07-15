@@ -9,6 +9,7 @@ import { ReactComponent as Verified } from 'assets/icons/verified.svg';
 import AvatarImage from 'assets/avatar.png';
 import AvatarImage1 from 'assets/avatar-01.png';
 import AvatarImage2 from 'assets/avatar-02.png';
+import AvatarImage3 from 'assets/avatar-03.jpg';
 
 function SliderCard({ rank, name, wallet }) {
 
@@ -18,9 +19,12 @@ function SliderCard({ rank, name, wallet }) {
     avatarImage = AvatarImage2;
   } else if (rank % 3 === 0) {
     avatarImage = AvatarImage1;
+  } else if (rank === 1) {
+    avatarImage = AvatarImage3;
   } else {
     avatarImage = AvatarImage;
   }
+
   return (
     <div className='slider-card'>
       <div className='slider-card--header'>
@@ -31,7 +35,7 @@ function SliderCard({ rank, name, wallet }) {
           case 2:
             return <div className='slider-card--rank slider-card--rank2 font-caption--2-bold'><Donut />#{rank}</div>;
           case 3:
-            return <div className='slider-card--rank slider-card--rank3 font-caption--2-bold'><Lightning />#{rank}</div>;            
+            return <div className='slider-card--rank slider-card--rank3 font-caption--2-bold'><Lightning />#{rank}</div>;
           default:
             return <div className='slider-card--rank font-caption--2-bold'><Doughnut />#{rank}</div>;
           }
