@@ -9,7 +9,7 @@ import { ReactComponent as Plus } from 'assets/icons/plus-2.svg'
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
 import { ReactComponent as Loading } from 'assets/icons/loading.svg'
 import { ReactComponent as Close } from 'assets/icons/close-circle.svg'
-import NFTImagePlaceholder from 'assets/NFT.png'
+import NFTImagePlaceholder from 'assets/NFT.webp'
 import UploadModal from 'views/components/UploadModal';
 
 function UploadSinglePage() {

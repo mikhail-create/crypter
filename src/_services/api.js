@@ -1,5 +1,5 @@
 // Функция для получения всех продуктов
-export const getAllProcuts = ({ page = 1, limit = 8 } = {}) => {
+export const getAllProducts = ({ page = 1, limit = 8 } = {}) => {
   const url = `https://crypter-backend.vercel.app/products?page=${page}&limit=${limit}`;
 
   return fetch(url)

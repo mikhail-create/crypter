@@ -6,7 +6,7 @@ function ContentSection() {
     <section className="section">
       <span className='section--subtitle font-hairline--2'>Create, explore, & collect digital art NFTs.</span>
       <h3 className='section--title font-headline--3'>The new creative economy.</h3>
-      <Button text="Start your search" size='Medium'  />
+      <Button text="Start your search" size='Medium' />
     </section>
   )
 }

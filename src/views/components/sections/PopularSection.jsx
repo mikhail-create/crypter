@@ -11,15 +11,13 @@ function PopularSection() {
 
   const slides = [
     <SliderCard key={1} rank={1} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={2} rank={2} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={3} rank={3} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={4} rank={4} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={5} rank={5} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={6} rank={6} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={7} rank={7} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={8} rank={8} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={9} rank={9} name='Edd Harris' wallet={2.456} />,
-    <SliderCard key={10} rank={10} name='Edd Harris' wallet={2.456} />,
+    <SliderCard key={2} rank={2} name='John Smith' wallet={5.678} />,
+    <SliderCard key={3} rank={3} name='Emily Johnson' wallet={9.012} />,
+    <SliderCard key={4} rank={4} name='Michael Davis' wallet={3.456} />,
+    <SliderCard key={5} rank={5} name='Sarah Thompson' wallet={1.234} />,
+    <SliderCard key={6} rank={6} name='David Wilson' wallet={7.890} />,
+    <SliderCard key={7} rank={7} name='Jessica Brown' wallet={4.321} />,
+    <SliderCard key={8} rank={8} name='Daniel Taylor' wallet={6.789} />
   ]
 
   const handlePrevSlide = () => {

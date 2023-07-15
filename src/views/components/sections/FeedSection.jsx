@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CardBig from 'views/components/CardBig';
 import CardSmall from 'views/components/CardSmall';
 import AvatarImage from 'assets/avatar.png';
 import Button from 'views/components/shared/Button';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
-import NFTList from '_helpers/NFTList'
+import { getAllProducts } from '_services/api';
 
 const LatestCreator = ({ name, wallet, amount }) => {
   return (
@@ -23,37 +23,75 @@ const LatestCreator = ({ name, wallet, amount }) => {
           {wallet}
         </div>
       </div>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
 function FeedSection() {
+  const [latestNFTs, setLatestNFTs] = useState([]);
+
+  useEffect(() => {
+    loadLatestNFTs();
+  }, []);
+
+  const loadLatestNFTs = () => {
+    getAllProducts({ page: 1, limit: 3 })
+      .then(data => {
+        setLatestNFTs(data.results);
+      })
+      .catch(error => {
+        console.error('Failed to fetch latest NFTs:', error);
+      });
+  };
+
   return (
     <section className='feed'>
       <div className='feed--wrapper'>
         <CardBig />
         <div className='feed--list'>
-          <CardSmall title={NFTList[15].name} price={NFTList[15].price} amount={NFTList[15].stockAmount} imgSrc={NFTList[15].src} />
-          <CardSmall title={NFTList[16].name} price={NFTList[16].price} amount={NFTList[16].stockAmount} imgSrc={NFTList[16].src} />
-          <CardSmall title={NFTList[17].name} price={NFTList[17].price} amount={NFTList[17].stockAmount} imgSrc={NFTList[17].src} />
+          {latestNFTs.map((nft, index) => (
+            <CardSmall
+              key={index}
+              title={nft.name}
+              price={nft.price}
+              amount={nft.stockAmount}
+              imgSrc={'https://crypter-backend.vercel.app/images/' + nft.src}
+            />
+          ))}
         </div>
       </div>
       <div className="feed-latest">
         <span className="feed-latest--title font-caption--2-bold">
-                    Latest upload from creators 🔥
+          Latest upload from creators 🔥
         </span>
         <div className='feed-latest--list'>
-          <LatestCreator className='feed-latest--card' name='Payton Harris' wallet='2.456' amount='6' />
-          <LatestCreator className='feed-latest--card' name='Payton Harris' wallet='2.456' amount='6' />
-          <LatestCreator className='feed-latest--card' name='Payton Harris' wallet='2.456' amount='6' />
-          <LatestCreator className='feed-latest--card' name='Payton Harris' wallet='2.456' amount='6' />
+          <LatestCreator
+            name='Payton Harris'
+            wallet='2.456'
+            amount='1'
+          />
+          <LatestCreator
+            name='Mike Joves'
+            wallet='21.56'
+            amount='2'
+          />
+          <LatestCreator
+            name='Elisabeth Eol'
+            wallet='0.156'
+            amount='5'
+          />
+          <LatestCreator
+            name='Eula Ember'
+            wallet='9.556'
+            amount='6'
+          />
         </div>
         <div className='feed-latest--btn'>
           <Button text='Discover more' icon={<ArrowRight />} />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default FeedSection
+export default FeedSection;

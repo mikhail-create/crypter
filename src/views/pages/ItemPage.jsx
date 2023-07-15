@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import NFT from 'assets/NFT.png';
+import NFT from 'assets/NFT.webp';
 import Avatar from 'assets/avatar.png';
 import Avatar1 from 'assets/avatar-01.png';
 import Avatar2 from 'assets/avatar-02.png';
@@ -41,7 +41,7 @@ function ItemPage() {
   return (
     <div className='item'>
       <div className='item--preview'>
-        <img srcSet={NFT} alt={product.name + ' NFT Image'} />
+        <img srcSet={product.src ? 'https://crypter-backend.vercel.app/images/' + product.src : NFT} alt={product.name + ' NFT Image'} />
       </div>
       <div className='item-info'>
         <div className='item-info--stats'>

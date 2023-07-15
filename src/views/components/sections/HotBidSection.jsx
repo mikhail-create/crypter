@@ -1,12 +1,27 @@
-import React, { useRef } from 'react'
-import Carousel from 'react-elastic-carousel'
-import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg'
-import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg'
-import CardMedium from '../CardMedium'
-import NFTList from '_helpers/NFTList'
+import React, { useRef, useEffect, useState } from 'react';
+import Carousel from 'react-elastic-carousel';
+import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg';
+import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
+import CardMedium from '../CardMedium';
+import { getAllProducts } from '_services/api';
 
 function HotBidSection() {
   const carouselRef = useRef(null);
+  const [nftList, setNftList] = useState([]);
+
+  useEffect(() => {
+    loadNfts();
+  }, []);
+
+  const loadNfts = () => {
+    getAllProducts({ page: 2, limit: 6 })
+      .then(data => {
+        setNftList(data.results);
+      })
+      .catch(error => {
+        console.error('Failed to fetch NFTs:', error);
+      });
+  };
 
   const handlePrevSlide = () => {
     carouselRef.current.slidePrev();
@@ -20,14 +35,14 @@ function HotBidSection() {
     <div className='hotbid'>
       <div className='hotbid-header'>
         <h3 className='hotbid-header--title font-headline--3'>
-                    Hot bid
+          Hot bid
         </h3>
         <div className='hotbid-header--control'>
           <button className='hotbid-header--arrow' onClick={handlePrevSlide}>
-            <ArrowLeft />
+            <ArrowLeft fill='black' />
           </button>
           <button className='hotbid-header--arrow' onClick={handleNextSlide}>
-            <ArrowRight />
+            <ArrowRight fill='black' />
           </button>
         </div>
       </div>
@@ -39,64 +54,22 @@ function HotBidSection() {
           showArrows={false}
           itemPadding={[0]}
         >
-          <CardMedium
-            key={NFTList[5].name}
-            title={NFTList[5].name}
-            instaPrice={NFTList[5].price}
-            stockAmount={NFTList[5].stockAmount}
-            bid={NFTList[5].highestBid}
-            isNewBids={NFTList[5].newBid}
-            imgSrc={NFTList[5].src}
-          />
-          <CardMedium
-            key={NFTList[6].name}
-            title={NFTList[6].name}
-            instaPrice={NFTList[6].price}
-            stockAmount={NFTList[6].stockAmount}
-            bid={NFTList[6].highestBid}
-            isNewBids={NFTList[6].newBid}
-            imgSrc={NFTList[6].src}
-          />
-          <CardMedium
-            key={NFTList[7].name}
-            title={NFTList[7].name}
-            instaPrice={NFTList[7].price}
-            stockAmount={NFTList[7].stockAmount}
-            bid={NFTList[7].highestBid}
-            isNewBids={NFTList[7].newBid}
-            imgSrc={NFTList[7].src}
-          />
-          <CardMedium
-            key={NFTList[8].name + 0}
-            title={NFTList[8].name}
-            instaPrice={NFTList[8].price}
-            stockAmount={NFTList[8].stockAmount}
-            bid={NFTList[8].highestBid}
-            isNewBids={NFTList[8].newBid}
-            imgSrc={NFTList[8].src}
-          />
-          <CardMedium
-            key={NFTList[8].name + 1}
-            title={NFTList[8].name}
-            instaPrice={NFTList[8].price}
-            stockAmount={NFTList[8].stockAmount}
-            bid={NFTList[8].highestBid}
-            isNewBids={NFTList[8].newBid}
-            imgSrc={NFTList[8].src}
-          />
-          <CardMedium
-            key={NFTList[8].name + 2}
-            title={NFTList[8].name}
-            instaPrice={NFTList[8].price}
-            stockAmount={NFTList[8].stockAmount}
-            bid={NFTList[8].highestBid}
-            isNewBids={NFTList[8].newBid}
-            imgSrc={NFTList[8].src}
-          />
+          {nftList.map((nft, index) => (
+            <CardMedium
+              key={index}
+              id={nft.id}
+              title={nft.name}
+              instaPrice={nft.price}
+              stockAmount={nft.stockAmount}
+              bid={nft.highestBid}
+              isNewBids={nft.newBid}
+              imgSrc={'https://crypter-backend.vercel.app/images/' + nft.src}
+            />
+          ))}
         </Carousel>
       </div>
     </div>
-  )
+  );
 }
 
-export default HotBidSection
+export default HotBidSection;

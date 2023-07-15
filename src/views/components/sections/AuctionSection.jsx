@@ -1,5 +1,5 @@
 import React from 'react'
-import PreviewImage from 'assets/image1.png'
+import PreviewImage from 'assets/test-images/img-101.webp'
 import AvatarImage from 'assets/avatar.png'
 import ETHImage from 'assets/ETH.png'
 import { ReactComponent as ArrowLeft } from 'assets/icons/arrow-left.svg'
@@ -15,17 +15,17 @@ function AuctionSection() {
       <div className='auction-info'>
         <div className='auction-info--author'>
           <h1 className='auction--title font-headline font-headline--1'>
-                        the creator network®
+            the creator network®
           </h1>
           <div className='auction-data'>
             <div className='auction-data--block'>
               <img srcSet={AvatarImage} />
               <div className='auction-data--block--info'>
                 <span className='subtitle font-caption--2'>
-                                    Creator
+                  Creator
                 </span>
                 <span className='title font-caption--1-bold'>
-                                    Enrico Cole
+                  Enrico Cole
                 </span>
               </div>
             </div>
@@ -33,10 +33,10 @@ function AuctionSection() {
               <img srcSet={ETHImage} />
               <div className='auction-data--block--info'>
                 <span className='subtitle font-caption--2'>
-                                    Instant price
+                  Instant price
                 </span>
                 <span className='title font-caption--1-bold'>
-                                    3.5 ETH
+                  3.5 ETH
                 </span>
               </div>
             </div>
@@ -45,37 +45,37 @@ function AuctionSection() {
         <div className="auction-info--bid">
           <div className="bid-price">
             <span className='bid-price--title font-body--2-bold'>
-                            Current Bid
+              Current Bid
             </span>
             <span className='bid-price--amount font-headline--2'>
-                            1.00 ETH
+              1.00 ETH
             </span>
             <span className='bid-price--currency font-body--1-bold'>
-                            $3,618.36
+              $3,618.36
             </span>
           </div>
           <div className="bid-time">
             <div className="bid-time--title font-body--2-bold">
-                            Auction ending in
+              Auction ending in
             </div>
             <div className="bid-time-ending">
               <span className='bid-time-ending--now font-headline--4'>
-                                19
+                19
               </span>
               <span className='bid-time-ending--now font-headline--4'>
-                                24
+                24
               </span>
               <span className='bid-time-ending--now font-headline--4'>
-                                19
+                19
               </span>
               <span className="bid-time-ending--subtitle font-body--2-bold">
-                                Hrs
+                Hrs
               </span>
               <span className="bid-time-ending--subtitle font-body--2-bold">
-                                mins
+                mins
               </span>
               <span className="bid-time-ending--subtitle font-body--2-bold">
-                                secs
+                secs
               </span>
             </div>
           </div>

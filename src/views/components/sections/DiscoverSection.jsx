@@ -8,12 +8,19 @@ import ProductsList from 'views/components/ProductsList';
 
 function DiscoverSection() {
   const [sliderValue, setSliderValue] = useState(5);
-  const [category, setCategory] = useState('All items');
+  const [selectedFilters, setSelectedFilters] = useState({
+    category: 'All items',
+    price: '',
+    likes: '',
+    creator: '',
+    priceRange: [0, 100]
+  });
 
   const handleCategoryChange = (newCategory) => {
-    setCategory((prevCategory) =>
-      prevCategory === newCategory ? 'All Items' : newCategory
-    );
+    setSelectedFilters((prevFilters) => ({
+      ...prevFilters,
+      category: newCategory === prevFilters.category ? 'All items' : newCategory
+    }));
   };
 
   const handleSliderChange = (newValue) => {
@@ -28,12 +35,12 @@ function DiscoverSection() {
           <DropDown items={['Recently added', 'Total bids', 'Recently added', 'Total bids']} />
         </div>
         <nav className="discover-category--navigation">
-          <NavItem handleCategoryChange={handleCategoryChange} name="All items" isSelected={category === 'All items'} />
-          <NavItem handleCategoryChange={handleCategoryChange} name="Art" isSelected={category === 'Art'} />
-          <NavItem handleCategoryChange={handleCategoryChange} name="Game" isSelected={category === 'Game'} />
-          <NavItem handleCategoryChange={handleCategoryChange} name="Photography" isSelected={category === 'Photography'} />
-          <NavItem handleCategoryChange={handleCategoryChange} name="Music" isSelected={category === 'Music'} />
-          <NavItem handleCategoryChange={handleCategoryChange} name="Video" isSelected={category === 'Video'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="All items" isSelected={selectedFilters.category === 'All items'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Art" isSelected={selectedFilters.category === 'Art'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Game" isSelected={selectedFilters.category === 'Game'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Photography" isSelected={selectedFilters.category === 'Photography'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Music" isSelected={selectedFilters.category === 'Music'} />
+          <NavItem handleCategoryChange={handleCategoryChange} name="Video" isSelected={selectedFilters.category === 'Video'} />
         </nav>
         <Button text='Filter' isColored={true} icon={<Close />} />
       </div>
@@ -49,7 +56,7 @@ function DiscoverSection() {
           <RangeBar min={0} max={100} value={sliderValue} onChange={handleSliderChange} />
         </div>
       </div>
-      <ProductsList />
+      <ProductsList filters={selectedFilters} />
     </section >
   );
 }
