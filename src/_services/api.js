@@ -11,15 +11,19 @@ export const getAllProcuts = ({ page = 1, limit = 8 } = {}) => {
 };
 
 // Функция для получения продукта по id
-export async function getProductById(id) {
-  try {
-    const response = await fetch(`https://crypter-backend.vercel.app/products/${id}`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    // Обработка ошибок
-    console.error(error);
-  }
+export function getProductById(id) {
+  return fetch(`https://crypter-backend.vercel.app/products/${id}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Failed to fetch product');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      return {};
+    });
 }
 
 // Функция для получения изображения по имени файла

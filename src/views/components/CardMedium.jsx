@@ -8,7 +8,7 @@ import { ReactComponent as Heart } from 'assets/icons/heart.svg';
 import { ReactComponent as ScatterUp } from 'assets/icons/scatter-up.svg';
 import CustomLabel from 'views/components/shared/CustomLabel';
 
-function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) {
+function CardMedium({ id, title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
@@ -27,23 +27,24 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) 
 
       {
         isHovered &&
-                <div className='card-hover' >
-                  <div className='card-hover--header'>
-                    <span className='card-hover--indicator font-hairline--2'>
-                            purchasing !
-                    </span>
-                    <button className='card-hover--like'>
-                      <Heart />
-                    </button>
-                  </div>
-                  <div className='card-hover--button'>
-                    <Button
-                      text='Place a bid'
-                      isColored={true}
-                      icon={<ScatterUp />}
-                    />
-                  </div>
-                </div>
+        <div className='card-hover' >
+          <div className='card-hover--header'>
+            <span className='card-hover--indicator font-hairline--2'>
+              purchasing !
+            </span>
+            <button className='card-hover--like'>
+              <Heart />
+            </button>
+          </div>
+          <div className='card-hover--button'>
+            <Button
+              text='Place a bid'
+              path={'/item/' + id}
+              isColored={true}
+              icon={<ScatterUp />}
+            />
+          </div>
+        </div>
       }
       <img srcSet={imgSrc} alt={title} />
       <div className='card-medium-description'>
@@ -70,7 +71,7 @@ function CardMedium({ title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) 
           <div className='stats-highest'>
             <CandlesticksUp />
             <span className='stats-highest--label font-caption--2'>
-                            Highest bid
+              Highest bid
             </span>
             <span className='stats-highest--bid font-caption--2-bold'>
               {bid + ' ETH'}

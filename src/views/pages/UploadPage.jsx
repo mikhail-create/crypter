@@ -12,12 +12,12 @@ function UploadPage() {
   return (
     <div className='upload'>
       <div className='upload-nav'>
-        <Button text='Back to home' iconPosition='Left' icon={<ArrowLeft />} path='/' />
+        <Button text='Back to home' iconPosition='Left' icon={<ArrowLeft fill='black'/>} path='/' />
         <div className='upload-nav--path'>
           <span className='font-button--2'>
             Home
           </span>
-          <ArrowRight />
+          <ArrowRight fill='black'/>
           <span className='font-button--2'>
             Upload Item
           </span>

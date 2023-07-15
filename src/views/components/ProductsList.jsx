@@ -24,7 +24,7 @@ const ProductsList = () => {
         setIsLoading(false);
       })
       .catch(error => {
-        console.error('Ошибка при загрузке продуктов:', error);
+        console.error('Error', error);
         setIsLoading(false);
       });
   };
@@ -46,6 +46,7 @@ const ProductsList = () => {
       {dataList.map((item, index) => (
         <CardMedium
           key={item.name + index}
+          id={item.id}
           title={item.name}
           instaPrice={item.price}
           stockAmount={item.stockAmount}

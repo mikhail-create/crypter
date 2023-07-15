@@ -11,11 +11,24 @@ const Button = ({ text, size, isColored, isDisabled, iconPosition, icon, path, o
   const buttonClassName = `button ${buttonSize} ${buttonColor} ${buttonDisabled}`;
 
   return (
-    <button className={buttonClassName} disabled={isDisabled} onClick={onClick}>
-      {isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
-      <Link to={path} className="button-text">{text}</Link>
-      {!isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
-    </button>
+    <>
+      {path
+        ?
+        <Link to={path} className={buttonClassName} disabled={isDisabled} >
+          {isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
+          <span className="button-text">{text}</span>
+          {!isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
+        </Link>
+        :
+        <button className={buttonClassName} disabled={isDisabled} onClick={onClick}>
+          {isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
+          <span className="button-text">{text}</span>
+          {!isIconLeft && hasIcon && <div className="button-icon">{icon}</div>}
+        </button>
+      }
+
+    </>
+
   );
 };
 

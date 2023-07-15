@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
-import NFT from 'assets/NFT.png'
-import Avatar from 'assets/avatar.png'
-import Avatar1 from 'assets/avatar-01.png'
-import Avatar2 from 'assets/avatar-02.png'
-import CustomLabel from 'views/components/shared/CustomLabel'
-import NavItem from 'views/components/shared/NavItem'
-import Button from 'views/components/shared/Button'
+import React, { useState, useEffect } from 'react';
+import NFT from 'assets/NFT.png';
+import Avatar from 'assets/avatar.png';
+import Avatar1 from 'assets/avatar-01.png';
+import Avatar2 from 'assets/avatar-02.png';
+import CustomLabel from 'views/components/shared/CustomLabel';
+import NavItem from 'views/components/shared/NavItem';
+import Button from 'views/components/shared/Button';
+import { getProductById } from '_services/api';
+import { useParams } from 'react-router-dom';
 
-function ItemPage({ name }) {
+function ItemPage() {
   const [category, setCategory] = useState('Info');
+  const [product, setProduct] = useState(null);
+  const { id } = useParams();
 
   const handleFilterChange = (newFilter) => {
     setCategory((prevCategory) =>
@@ -16,31 +20,40 @@ function ItemPage({ name }) {
     );
   };
 
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = () => {
+    getProductById(id)
+      .then(data => {
+        setProduct(data);
+      })
+      .catch(error => {
+        console.error('Failed to fetch product:', error);
+      });
+  };
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className='item'>
       <div className='item--preview'>
-        <img srcSet={NFT} alt={name + ' NFT Image'} />
+        <img srcSet={NFT} alt={product.name + ' NFT Image'} />
       </div>
       <div className='item-info'>
         <div className='item-info--stats'>
-          <h3 className='font-headline--3'>
-            The amazing art
-          </h3>
+          <h3 className='font-headline--3'>{product.name}</h3>
           <div className='row'>
-            <CustomLabel text='2.5 ETH' isPopularGhost={true} />
-            <span className='font-button--1'>
-              $4,429.87
-            </span>
-            <span className='font-button--1'>
-              10 in stock
-            </span>
+            <CustomLabel text={product.instaPrice + ' ETH'} isPopularGhost={true} />
+            <span className='font-button--1'>{product.price}</span>
+            <span className='font-button--1'>{product.stockAmount} in stock</span>
           </div>
         </div>
         <div className='item-info--description'>
-          <p className='font-body--2'>
-            This NFT Card will give you Access to Special Airdrops. To learn more about UI8 please visit
-            <a href='https://ui8.net'> https://ui8.net</a>
-          </p>
+          <p className='font-body--2'>{product.description}</p>
         </div>
         <div className='item-info--filter'>
           <nav>
@@ -58,23 +71,15 @@ function ItemPage({ name }) {
           <div className='data--item'>
             <img srcSet={Avatar} alt='Owner Image' />
             <div>
-              <span className='font-caption--1'>
-                Owner
-              </span>
-              <span className='font-caption--1-bold'>
-                Raquel Will
-              </span>
+              <span className='font-caption--1'>Owner</span>
+              <span className='font-caption--1-bold'>{product.owner}</span>
             </div>
           </div>
           <div className='data--item'>
             <img srcSet={Avatar1} alt='Owner Image' />
             <div>
-              <span className='font-caption--1'>
-                Creator
-              </span>
-              <span className='font-caption--1-bold'>
-                Selyna Mayert
-              </span>
+              <span className='font-caption--1'>Creator</span>
+              <span className='font-caption--1-bold'>{product.creator}</span>
             </div>
           </div>
         </div>
@@ -83,20 +88,12 @@ function ItemPage({ name }) {
             <img srcSet={Avatar2} alt='User Avatar' />
             <div className='bid-info'>
               <div className='bid-info--row'>
-                <span className='font-body--2-bold color--gray'>
-                  Highest bid by
-                </span >
-                <span className='font-body--2-bold'>
-                  Kohaku Tora
-                </span>
+                <span className='font-body--2-bold color--gray'>Highest bid by</span>
+                <span className='font-body--2-bold'>{product.highestBidBy}</span>
               </div>
               <div className='bid-info--row'>
-                <span className='font-body--1-bold'>
-                  1.46 ETH
-                </span>
-                <span className='font-body--1-bold color--gray'>
-                  $2,764.89
-                </span>
+                <span className='font-body--1-bold'>{product.highestBid} ETH</span>
+                <span className='font-body--1-bold color--gray'>{product.highestBidPrice}</span>
               </div>
             </div>
           </div>
@@ -105,23 +102,15 @@ function ItemPage({ name }) {
             <Button size='Medium' text='Place a bid' />
           </div>
           <div className='item-actions--fee'>
-            <span className='font-caption--1-bold'>
-              Service fee
-            </span>
-            <span className='font-caption--1-bold color--black'>
-              1.5%
-            </span>
-            <span className='font-caption--1-bold'>
-              2.563 ETH
-            </span>
-            <span className='font-caption--1-bold'>
-              $4,540.62
-            </span>
+            <span className='font-caption--1-bold'>Service fee</span>
+            <span className='font-caption--1-bold color--black'>{product.serviceFee}</span>
+            <span className='font-caption--1-bold'>{product.serviceFeeEth}</span>
+            <span className='font-caption--1-bold'>{product.serviceFeePrice}</span>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ItemPage
+export default ItemPage;
