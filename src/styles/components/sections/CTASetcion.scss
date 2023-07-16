@@ -1,42 +1,63 @@
 .cta {
-    padding: 80px 160px;
-    border-top: 1px solid $neutral-6;
-    border-bottom: 1px solid $neutral-6;
-    box-sizing: border-box;
+  padding: 80px 160px;
+  border-top: 1px solid $neutral-6;
+  border-bottom: 1px solid $neutral-6;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &-content {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 
-    &-content {
-        display: flex;
-        flex-direction: column;
-
-        &--subtitle {
-            color: $neutral-4;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        &--title {
-            color: $neutral-2;
-            margin-bottom: 20px;
-        }
-
-        &--info {
-            color: $neutral-4;
-            margin-bottom: 40px;
-        }
-
-        &--actions {
-            display: flex;
-            flex-direction: row;
-            gap: 16px;
-        }
+    &--subtitle {
+      color: $neutral-4;
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
+
+    &--title {
+      color: $neutral-2;
+      margin-bottom: 20px;
+    }
+
+    &--info {
+      color: $neutral-4;
+      margin-bottom: 40px;
+    }
+
+    &--actions {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+
+  &--image {
+    width: 640px;
+    height: 640px;
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .cta {
+    padding: 64px 32px;
+    flex-direction: column;
+    gap: 40px;
 
     &--image {
-        width: 640px;
-        height: 640px;
+      width: 310px;
+      height: 310px;
     }
+
+    &-content {
+      text-align: center;
+
+      &--actions {
+        flex-direction: column;
+      }
+    }
+  }
 }

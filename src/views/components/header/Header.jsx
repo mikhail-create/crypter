@@ -5,6 +5,7 @@ import { ReactComponent as Menu } from 'assets/icons/menu.svg'
 import SearchBar from './SearchBar'
 import Notification from './Notification'
 import Button from 'views/components/shared/Button'
+import scrollToSection from 'hooks/useScrollToSection'
 
 function Header() {
   return (
@@ -18,7 +19,9 @@ function Header() {
           </div>
           <div className="left--divider" />
           <div className="left--link font-button font-button--2">
-            Discover
+            <a onClick={() => scrollToSection('discover')}>
+              Discover
+            </a>
           </div>
           <div className="left--link font-button font-button--2">
             How it work

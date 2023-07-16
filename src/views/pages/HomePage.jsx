@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { React, useEffect } from 'react'
 import ContentSection from 'views/components/sections/ContentSection'
 import AuctionSection from 'views/components/sections/AuctionSection'
@@ -24,7 +22,7 @@ function HomePage() {
       <HotBidSection />
       <HotCollectionSection />
       <DiscoverSection />
-      {/* <CTASection /> */}
+      <CTASection />
     </div>
   )
 }

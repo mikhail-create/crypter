@@ -28,7 +28,7 @@ function DiscoverSection() {
   };
 
   return (
-    <section className="discover">
+    <section id='discover' className="discover">
       <h3 className="discover--title font-headline--3">Discover</h3>
       <div className="discover-category">
         <div className="discover-category--filter">
