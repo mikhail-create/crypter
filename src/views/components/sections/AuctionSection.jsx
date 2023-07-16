@@ -15,7 +15,7 @@ function AuctionSection() {
       <div className='auction-info'>
         <div className='auction-info--author'>
           <h1 className='auction--title font-headline font-headline--1'>
-            the creator network®
+            Marco carrillo®
           </h1>
           <div className='auction-data'>
             <div className='auction-data--block'>
@@ -86,10 +86,10 @@ function AuctionSection() {
         </div>
         <div className="auction-info-actions">
           <div className="auction-info-actions--arrow">
-            <ArrowLeft />
+            <ArrowLeft fill='black' />
           </div>
           <div className="auction-info-actions--arrow">
-            <ArrowRight />
+            <ArrowRight fill='black' />
           </div>
         </div>
       </div>

@@ -1,164 +1,182 @@
 .auction {
-    width: 100%;
-    height: fit-content;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  gap: 128px;
+  padding: 126px 160px;
+  box-sizing: border-box;
+
+  &-preview {
+    &--img {
+      width: 640px;
+      height: 800px;
+      border-radius: 16px;
+    }
+  }
+
+  &-info {
     display: flex;
+    flex-direction: column;
+    width: 352px;
+    height: 296px;
+    gap: 40px;
 
-    justify-content: space-between;
-    padding: 126px 160px 136px 160px;
-    box-sizing: border-box;
+    &--author {
+      .auction--title {
+        color: $neutral-2;
+        margin-bottom: 20px;
+      }
 
-    &-preview {
-        &--img {
-            width: 640px;
-            height: 800px;
-            border-radius: 16px;
+      .auction-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &--block {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          align-items: center;
+
+          > img {
+            width: 40px;
+          }
+
+          &--info {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8px;
+
+            .subtitle {
+              color: $neutral-4;
+              white-space: nowrap;
+            }
+
+            .title {
+              color: $neutral-2;
+              white-space: nowrap;
+            }
+          }
         }
+      }
     }
 
-    &-info {
+    &--bid {
+      padding: 30px;
+      border: 2px solid $neutral-6;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .bid-price,
+      .bid-time {
         display: flex;
         flex-direction: column;
-        width: 352px;
-        height: 296px;
-        gap: 40px;
+        align-items: center;
 
-        &--author {
-            .auction--title {
-                color: $neutral-2;
-                margin-bottom: 20px;
-            }
-
-            .auction-data {
-                display: flex;
-                flex-direction: row;
-                gap: 65px;
-
-                &--block {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    > img {
-                        width: 40px;
-                    }
-
-                    &--info {
-                        display: flex;
-                        flex-direction: column;
-                        margin-left: 8px;
-
-                        .subtitle {
-                            color: $neutral-4;
-                        }
-
-                        .title {
-                            color: $neutral-2;
-                        }
-                    }
-                }
-            }
+        &--title {
+          color: $neutral-2;
         }
 
-        &--bid {
-            padding: 30px 36.5px;
-            box-sizing: border-box;
-            border: 2px solid $neutral-6;
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-
-            .bid-price {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                &--title {
-                    color: $neutral-2;
-                }
-
-                &--amount {
-                    color: $neutral-1;
-                }
-
-                &--currency {
-                    color: $neutral-4;
-                }
-            }
-
-            .bid-time {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                &--title {
-                    color: $neutral-2;
-                }
-
-                &-ending {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: repeat(2, auto);
-                    grid-column-gap: 19.5px;
-                    grid-row-gap: 0px;
-
-                    &--now {
-                        color: $neutral-1;
-                        width: 64px;
-                        height: 40px;
-                        text-align: center;
-                    }
-
-                    &--subtitle {
-                        color: $neutral-4;
-                        width: 64px;
-                        height: 24px;
-                        text-align: center;
-                    }
-                }
-            }
+        &--amount {
+          color: $neutral-1;
         }
 
-        &--buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        &--currency {
+          color: $neutral-4;
         }
+      }
 
-        &-actions {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
+      .bid-time {
+        &-ending {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, auto);
+          grid-column-gap: 19.5px;
+          grid-row-gap: 0px;
 
-            &--arrow {
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 100%;
-                box-sizing: border-box;
-                border: 2px solid $neutral-6;
-                cursor: pointer;
-            }
+          &--now,
+          &--subtitle {
+            width: 64px;
+            height: auto;
+            text-align: center;
+          }
+
+          &--now {
+            color: $neutral-1;
+          }
+
+          &--subtitle {
+            color: $neutral-4;
+          }
         }
+      }
     }
+
+    &--buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+
+      &--arrow {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        border: 2px solid $neutral-6;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: $tablet-size) {
-    .auction {
-        padding: 112px 80px 112px 80px;
+  .auction {
+    padding: 112px 80px;
 
-        &-preview {
-            &--img {
-                width: 528px;
-                height: 800px;
-                border-radius: 16px;
-            }
-        }
-
-        &-info {
-            width: 304px;
-        }
+    &-preview {
+      &--img {
+        width: 528px;
+      }
     }
+
+    &-info {
+      width: 304px;
+    }
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .auction {
+    flex-direction: column;
+    height: 1390px;
+    padding: 64px 35.5px;
+    gap: 32px;
+
+    &-preview {
+      &--img {
+        width: 310px;
+        height: 478px;
+      }
+    }
+    &-info {
+      &--bid {
+        padding: 32px 36.5px;
+      }
+
+      &-actions {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
 }

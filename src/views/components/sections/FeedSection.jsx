@@ -5,6 +5,7 @@ import AvatarImage from 'assets/avatar.png';
 import Button from 'views/components/shared/Button';
 import { ReactComponent as ArrowRight } from 'assets/icons/arrow-right.svg';
 import { getAllProducts } from '_services/api';
+import Carousel from 'react-elastic-carousel';
 
 const LatestCreator = ({ name, wallet, amount }) => {
   return (
@@ -60,6 +61,9 @@ function FeedSection() {
           ))}
         </div>
       </div>
+      <div className='feed--divider'>
+
+      </div>
       <div className="feed-latest">
         <span className="feed-latest--title font-caption--2-bold">
           Latest upload from creators 🔥
@@ -86,8 +90,36 @@ function FeedSection() {
             amount='6'
           />
         </div>
+        <div className='feed-latest--list-mobile'>
+          <Carousel
+            itemsToShow={1.5}
+            pagination={false}
+            showArrows={false}
+          >
+            <LatestCreator
+              name='Payton Harris'
+              wallet='2.456'
+              amount='1'
+            />
+            <LatestCreator
+              name='Mike Joves'
+              wallet='21.56'
+              amount='2'
+            />
+            <LatestCreator
+              name='Elisabeth Eol'
+              wallet='0.156'
+              amount='5'
+            />
+            <LatestCreator
+              name='Eula Ember'
+              wallet='9.556'
+              amount='6'
+            />
+          </Carousel>
+        </div>
         <div className='feed-latest--btn'>
-          <Button text='Discover more' icon={<ArrowRight />} />
+          <Button text='Discover more' icon={<ArrowRight fill='black'/>} />
         </div>
       </div>
     </section>

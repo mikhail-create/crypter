@@ -11,7 +11,7 @@ function CardBig() {
         <img srcSet={AvatarImage} alt='Avatar' />
         <div className='card-big-info--title'>
           <span className='font-body--1-bold'>
-          Pop art portrait
+            Pop art portrait
           </span>
           <span className='font-caption--1-bold'>
             4 in stock

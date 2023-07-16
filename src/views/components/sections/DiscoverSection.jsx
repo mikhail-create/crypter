@@ -34,6 +34,9 @@ function DiscoverSection() {
         <div className="discover-category--filter">
           <DropDown items={['Recently added', 'Total bids', 'Recently added', 'Total bids']} />
         </div>
+        <div className="discover-category--filter filter--mobile">
+          <DropDown items={['All items', 'Art', 'Game', 'Photography', 'Music', 'Video']} />
+        </div>
         <nav className="discover-category--navigation">
           <NavItem handleCategoryChange={handleCategoryChange} name="All items" isSelected={selectedFilters.category === 'All items'} />
           <NavItem handleCategoryChange={handleCategoryChange} name="Art" isSelected={selectedFilters.category === 'Art'} />
@@ -42,7 +45,9 @@ function DiscoverSection() {
           <NavItem handleCategoryChange={handleCategoryChange} name="Music" isSelected={selectedFilters.category === 'Music'} />
           <NavItem handleCategoryChange={handleCategoryChange} name="Video" isSelected={selectedFilters.category === 'Video'} />
         </nav>
-        <Button text='Filter' isColored={true} icon={<Close />} />
+        <span className='discover-category--button'>
+          <Button text='Filter' isColored={true} icon={<Close />} />
+        </span>
       </div>
       <div className="discover--divider"></div>
       <div className="discover-filters">

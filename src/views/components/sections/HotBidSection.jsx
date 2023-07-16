@@ -48,7 +48,6 @@ function HotBidSection() {
       </div>
       <div className='hotbid--list'>
         <Carousel
-          itemsToShow={4}
           pagination={false}
           ref={carouselRef}
           showArrows={false}

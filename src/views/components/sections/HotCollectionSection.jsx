@@ -4,13 +4,22 @@ import { getAllProducts } from '_services/api';
 
 function HotCollectionSection() {
   const [nftList, setNftList] = useState([]);
+  const [itemsToShow, setItemsToShow] = useState(3);
+
+  const updateItemsToLoad = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 480) {
+      setItemsToShow(1);
+    }
+  }
 
   useEffect(() => {
+    updateItemsToLoad()
     loadNfts();
   }, []);
 
   const loadNfts = () => {
-    getAllProducts({ page: 3, limit: 3 })
+    getAllProducts({ page: 3, limit: itemsToShow })
       .then(data => {
         setNftList(data.results);
       })
@@ -29,7 +38,7 @@ function HotCollectionSection() {
         Hot collections
       </h3>
       <div className='hotsection--list'>
-        {nftList.slice(0, 3).map((nft, index) => (
+        {nftList.slice(0, itemsToShow).map((nft, index) => (
           <CollectionItem
             key={index}
             images={[
@@ -40,7 +49,7 @@ function HotCollectionSection() {
             ]}
             title={nft.name}
             author={nft.owner}
-            itemsAmount={nft.itemsAmount}
+            itemsAmount={nft.stockAmount}
           />
         ))}
       </div>

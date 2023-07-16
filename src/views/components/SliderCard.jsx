@@ -9,7 +9,6 @@ import { ReactComponent as Verified } from 'assets/icons/verified.svg';
 import AvatarImage from 'assets/avatar.png';
 import AvatarImage1 from 'assets/avatar-01.png';
 import AvatarImage2 from 'assets/avatar-02.png';
-import AvatarImage3 from 'assets/avatar-03.jpg';
 
 function SliderCard({ rank, name, wallet }) {
 
@@ -19,8 +18,6 @@ function SliderCard({ rank, name, wallet }) {
     avatarImage = AvatarImage2;
   } else if (rank % 3 === 0) {
     avatarImage = AvatarImage1;
-  } else if (rank === 1) {
-    avatarImage = AvatarImage3;
   } else {
     avatarImage = AvatarImage;
   }

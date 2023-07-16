@@ -1,48 +1,70 @@
 .card-big {
+  width: 448px;
+  height: 512px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  > img {
     width: 448px;
-    height: 512px;
+    height: 430px;
+    border-radius: 12px;
+  }
+
+  &-info {
+    margin-top: 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     > img {
-        width: 448px;
-        height: 430px;
-        border-radius: 12px;
+      width: 48px;
+      height: 48px;
+    }
+
+    &--title {
+      display: flex;
+      flex-direction: column;
+      margin-left: 16px;
+      width: 100%;
+
+      > span:first-child {
+        color: $neutral-2;
+      }
+
+      > span {
+        color: $neutral-3;
+        white-space: nowrap;
+      }
+    }
+
+    &--price {
+      display: flex;
+      flex-direction: column;
+
+      > span {
+        color: $neutral-4;
+        text-align: center;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .card-big {
+    width: 100%;
+    height: fit-content;
+
+    > img {
+      width: 310px;
+      height: 432px;
     }
 
     &-info {
-        margin-top: 18px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        > img {
-            width: 48px;
-            height: 48px;
-        }
-
-        &--title {
-            display: flex;
-            flex-direction: column;
-            margin-left: 16px;
-            width: 312px;
-
-            > span:first-child {
-                color: $neutral-2;
-            }
-
-            > span {
-                color: $neutral-3;
-            }
-        }
-
-        &--price {
-            display: flex;
-            flex-direction: column;
-
-            > span {
-                color: $neutral-4;
-                text-align: center;
-            }
-        }
+      margin-top: 24px;
+      width: 100%;
     }
+  }
 }

@@ -1,65 +1,103 @@
 .discover {
-    padding: 128px 160px;
-    box-sizing: border-box;
+  padding: 128px 160px;
+  box-sizing: border-box;
+
+  &--title {
+    margin-bottom: 80px;
+  }
+
+  &-category {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 32px;
+
+    &--filter {
+      width: 180px;
+      margin-right: 132.5px;
+    }
+
+    .filter--mobile {
+      display: none;
+    }
+
+    &--navigation {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: center;
+      margin-right: 197.5px;
+    }
+  }
+
+  &--divider {
+    width: 100%;
+    height: 1px;
+    background-color: $neutral-6;
+    margin-bottom: 32px;
+  }
+
+  &-filters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 32px;
+
+    &--price {
+      display: flex;
+      flex-direction: column;
+
+      > label {
+        color: $neutral-4;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    &--button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .discover {
+    padding: 64px 32px;
 
     &--title {
-        margin-bottom: 80px;
-    }
-
-    &-category {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 32px;
-
-        &--filter {
-            width: 180px;
-            margin-right: 132.5px;
-        }
-
-        &--navigation {
-            display: flex;
-            flex-direction: row;
-            gap: 12px;
-            align-items: center;
-            margin-right: 197.5px;
-        }
-    }
-
-    &--divider {
-        width: 100%;
-        height: 1px;
-        background-color: $neutral-6;
-        margin-bottom: 32px;
+      margin-bottom: 32px;
     }
 
     &-filters {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 32px;
-
-        &--price {
-            display: flex;
-            flex-direction: column;
-
-            > label {
-                color: $neutral-4;
-                text-transform: uppercase;
-                margin-bottom: 12px;
-            }
-        }
+      display: none;
     }
 
-    &-list {
-        margin-top: 32px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 32px;
+    &-category {
+      flex-direction: column;
+      &--filter {
+        width: 100%;
+        margin-right: 0;
+      }
 
-        &--button {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
+      .filter--mobile {
+        display: block;
+      }
+
+      &--button {
+        display: none;
+      }
+
+      &--navigation {
+        display: none;
+      }
     }
+  }
 }

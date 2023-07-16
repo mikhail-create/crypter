@@ -44,3 +44,9 @@
         gap: 32px;
     }
 }
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .hotbid {
+    padding: 64px 32px;
+  }
+}

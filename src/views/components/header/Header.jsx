@@ -12,7 +12,7 @@ function Header() {
       <div className="layout">
         <div className="layout-left">
           <div className="left-logo">
-            <div className="left-logo--image">
+            <div className="left-logo--image" onClick={() => window.location.href = '/'}>
               <img srcSet={Logo} alt='Logo' />
             </div>
           </div>

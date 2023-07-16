@@ -1,68 +1,117 @@
 .popular {
-    padding: 128px 88px 78px 88px;
+  padding: 128px 88px 78px 88px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+
+  &-header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 72px;
+
+    &--category {
+      > span {
+        color: $neutral-4;
+      }
+
+      > div {
+        color: $neutral-2;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .arrow-down {
+          margin-left: 20.5px;
+        }
+      }
+    }
+
+    &--select {
+      width: 256px;
+    }
+  }
+
+  &-slider {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: fit-content;
+
+    &--control {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      margin-top: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid $neutral-6;
+      cursor: pointer;
+    }
+
+    &--buttons {
+      display: none;
+    }
+
+    .control--left {
+      margin-right: 1220px;
+    }
+
+    .control--right {
+      margin-left: 1220px;
+    }
+
+    &--list {
+      padding: 0 48px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .popular {
+    padding: 64px 32px;
 
     &-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 72px;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0;
 
-        &--category {
-            > span {
-                color: $neutral-4;
-            }
-
-            > div {
-                color: $neutral-2;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-
-                .arrow-down {
-                    margin-left: 20.5px;
-                }
-            }
-        }
-
-        &-select {
-            width: 256px;
-        }
+      &--select {
+        width: 100%;
+      }
     }
 
     &-slider {
-        margin-top: 64px;
+      &--list {
+        padding: 0;
+      }
+
+      &--control {
+        position: relative;
+        margin-top: 0;
+      }
+
+      .control--left {
+        display: none;
+      }
+
+      .control--right {
+        display: none;
+      }
+
+      &--buttons {
+        width: 100%;
         display: flex;
         flex-direction: row;
-        box-sizing: border-box;
-        height: fit-content;
-
-        &--control {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border-radius: 100%;
-            margin-top: 112px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid $neutral-6;
-            cursor: pointer;
-
-            &:first-of-type {
-                margin-right: 1220px;
-            }
-
-            &:last-of-type {
-                margin-left: 1220px;
-            }
-        }
-
-        &--list {
-            padding: 0 48px;
-            width: 100%;
-        }
+        justify-content: center;
+        gap: 16px;
+      }
     }
+  }
 }

@@ -20,6 +20,8 @@ header {
     gap: 32px;
 
     .left-logo {
+      cursor: pointer;
+      
       &--image {
         img {
           width: 126px;

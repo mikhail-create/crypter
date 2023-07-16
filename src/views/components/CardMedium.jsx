@@ -24,7 +24,6 @@ function CardMedium({ id, title, instaPrice, stockAmount, bid, isNewBids, imgSrc
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-
       {
         isHovered &&
         <div className='card-hover' >
