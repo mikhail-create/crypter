@@ -50,7 +50,7 @@ function ConnectPage() {
   return (
     <div className='connect'>
       <div className='connect--header'>
-        <ArrowLeft fill='white' width={24} height={15} />
+        <ArrowLeft fill='black' />
         <h2 className='font-headline--2'>Connect your wallet</h2>
       </div>
       <div className='connect--divider'></div>
@@ -76,7 +76,7 @@ function ConnectPage() {
             </div>
           ))}
         </div>
-        <div className='content-qr--preview'>
+        <div className='connect-content-qr--preview'>
           {
             selectedWallet ?
               <ConnectQRGenerator />

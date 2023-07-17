@@ -1,110 +1,160 @@
 .connect {
-    box-sizing: border-box;
-    padding: 80px 160px 136px 160px;
+  box-sizing: border-box;
+  padding: 80px 160px 136px 160px;
 
-    &--header {
-        height: 56px;
+  &--header {
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  &--divider {
+    height: 2px;
+    background-color: $neutral-6;
+    margin-bottom: 80px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+    gap: 128px;
+
+    .connect-wallets {
+      display: flex;
+      flex-direction: column;
+
+      .selected {
+        border: 2px solid $neutral-6;
+      }
+
+      &--item {
+        height: 128px;
+        width: 544px;
+        box-sizing: border-box;
+        padding: 32px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 16px;
-        margin-bottom: 40px;
+        justify-content: space-between;
+        border-radius: 16px;
+        border: 2px solid $neutral-8;
+        transition: 0.5s;
+
+        .wallet-item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 32px;
+
+          &--icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+          }
+
+          .purple--circle {
+            border: 2px solid $primary-purple;
+          }
+
+          .purple {
+            background-color: $primary-purple;
+          }
+
+          .green--circle {
+            border: 2px solid $primary-green;
+          }
+
+          .green {
+            background-color: $primary-green;
+          }
+
+          .blue--circle {
+            border: 2px solid $primary-blue;
+          }
+
+          .blue {
+            background-color: $primary-blue;
+          }
+
+          .rose--circle {
+            border: 2px solid $primary-rose;
+          }
+
+          .rose {
+            background-color: $primary-rose;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          border: 2px solid $neutral-6;
+        }
+      }
     }
 
+    &-qr--preview {
+      > img {
+        width: 416px;
+        height: 512px;
+        border-radius: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .connect {
+    padding: 32px;
+
+    &--header {
+      margin-bottom: 32px;
+      > h2 {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 600;
+      }
+    }
     &--divider {
-        height: 2px;
-        background-color: $neutral-6;
-        margin-bottom: 80px;
+      margin-bottom: 32px;
     }
 
     &-content {
-        display: flex;
-        flex-direction: row;
-        gap: 128px;
+      flex-direction: column;
+      gap: 32px;
 
-        .connect-wallets {
-            display: flex;
-            flex-direction: column;
-
-            .selected {
-                border: 2px solid $neutral-6;
-            }
-
-            &--item {
-                height: 128px;
-                width: 544px;
-                box-sizing: border-box;
-                padding: 32px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                border-radius: 16px;
-                border: 2px solid $neutral-8;
-                transition: 0.5s;
-
-                .wallet-item {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 32px;
-
-                    &--icon {
-                        width: 64px;
-                        height: 64px;
-                        border-radius: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        box-sizing: border-box;
-                    }
-
-                    .purple--circle {
-                        border: 2px solid $primary-purple;
-                    }
-
-                    .purple {
-                        background-color: $primary-purple;
-                    }
-
-                    .green--circle {
-                        border: 2px solid $primary-green;
-                    }
-
-                    .green {
-                        background-color: $primary-green;
-                    }
-
-                    .blue--circle {
-                        border: 2px solid $primary-blue;
-                    }
-
-                    .blue {
-                        background-color: $primary-blue;
-                    }
-
-                    .rose--circle {
-                        border: 2px solid $primary-rose;
-                    }
-
-                    .rose {
-                        background-color: $primary-rose;
-                    }
-                }
-
-                &:hover {
-                    cursor: pointer;
-                    border: 2px solid $neutral-6;
-                }
-            }
+      .connect-wallets {
+        .wallet-item {
+          > span {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+          }
         }
+      }
 
-        &-qr {
-            &--preview {
-                width: 416px;
-                height: 512px;
-                border-radius: 24px;
-            }
+      &-qr--preview {
+        > img {
+          border-radius: 24px;
+          width: 100%;
+          height: 218px;
+          object-fit: cover;
         }
+      }
+
+      .connect-wallets {
+        &--item {
+          width: calc(100% - 4px);
+          height: 88px;
+          padding: 12px 12px;
+        }
+      }
     }
+  }
 }

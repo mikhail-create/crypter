@@ -30,10 +30,10 @@ function ConnectQRGenerator() {
           <div className='connect-qr--wrapper scan-qr'>
             <div className='connect-qr--header'>
               <h3 className='font-headline--3'>
-                                Scan to connect
+                Scan to connect
               </h3>
               <span className='font-caption--2'>
-                                Powered by UI8.Wallet
+                Powered by UI8.Wallet
               </span>
             </div>
             <div className='connect-qr--content'>
@@ -49,11 +49,11 @@ function ConnectQRGenerator() {
           <div className='connect-qr--wrapper create-account'>
             <div className='connect-qr--header'>
               <h3 className='font-headline--3'>
-                                Terms of service
+                Terms of service
               </h3>
               <p className='font-caption--2'>
-                                Please take a few minutes to read and understand <Link className='font-caption--2-bold'>Stacks <br />
-                                    Terms of Service.</Link>  To continue, you’ll need to accept the terms of services by checking the boxes.
+                Please take a few minutes to read and understand <Link className='font-caption--2-bold'>Stacks <br />
+                  Terms of Service.</Link>  To continue, you’ll need to accept the terms of services by checking the boxes.
               </p>
             </div>
             <div className='connect-qr--body'>

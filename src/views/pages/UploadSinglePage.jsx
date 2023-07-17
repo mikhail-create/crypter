@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import CardMedium from 'views/components/CardMedium'
 import Button from 'views/components/shared/Button'

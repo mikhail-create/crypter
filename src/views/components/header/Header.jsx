@@ -50,16 +50,16 @@ function Header() {
         </div>
       </div>
       <div className={`header-menu ${isMenuOpen ? 'open' : ''}`}>
-        <div className="header-menu--item font-body--1-bold" onClick={() => scrollToSection('discover')}>
+        <div className="header-menu--item font-body--2-bold" onClick={() => scrollToSection('discover')}>
           Discover
         </div>
-        <div onClick={toggleMenu} className="header-menu--item font-body--1-bold">
+        <div onClick={toggleMenu} className="header-menu--item font-body--2-bold">
           How it work
         </div>
-        <div onClick={toggleMenu} className="header-menu--item font-body--1-bold">
+        <div onClick={toggleMenu} className="header-menu--item font-body--2-bold">
           <Link to="upload">Upload</Link>
         </div>
-        <div onClick={toggleMenu} className="header-menu--item font-body--1-bold">
+        <div onClick={toggleMenu} className="header-menu--item font-body--2-bold">
           <Link to="Connect">Connect Wallet</Link>
         </div>
       </div>
