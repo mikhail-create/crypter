@@ -158,3 +158,17 @@
     }
   }
 }
+
+@media (max-width: calc($tablet-size - 1px)) {
+  .item {
+    padding: 64px 32px;
+    flex-direction: column;
+
+    &--preview {
+      > img {
+        width: 310px;
+        height: 420px;
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <header>
+    <header id='header'>
       <div className="layout">
         <div className="layout-left">
           <div className="left-logo">

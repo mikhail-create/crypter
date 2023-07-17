@@ -1,38 +1,38 @@
 .create-item {
-    margin-top: 80px;
-    width: 352px;
-    height: 360px;
-    box-sizing: border-box;
-    padding: 16px 16px 24px 16px;
-    border-radius: 16px;
-    border: 1px solid $neutral-6;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-    color: $neutral-2;
+  margin-top: 80px;
+  width: 352px;
+  height: 360px;
+  box-sizing: border-box;
+  padding: 16px 16px 24px 16px;
+  border-radius: 16px;
+  border: 1px solid $neutral-6;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  color: $neutral-2;
 
-    &--link {
+  &--link {
+    display: none;
+  }
+
+  > button {
+    display: none;
+  }
+
+  > img {
+    width: 320px;
+    height: 256px;
+    border-radius: 8px;
+
+    &:first-child {
       display: none;
     }
+  }
 
-    > button {
-      display: none;
-    }
-
-    > img {
-        width: 320px;
-        height: 256px;
-        border-radius: 8px;
-
-        &:first-child {
-          display: none;
-        }
-    }
-
-    &--button {
-        width: fit-content;
-    }
+  &--button {
+    width: fit-content;
+  }
 }
 
 @media (max-width: calc($tablet-size - 1px)) {
@@ -47,6 +47,14 @@
 
     &--link {
       display: block;
+
+      > a {
+        color: $neutral-2;
+
+        &:visited {
+          color: $neutral-2;
+        }
+      }
     }
 
     > button {

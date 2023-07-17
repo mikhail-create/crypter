@@ -1,11 +1,16 @@
-import React, { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { Suspense, useLayoutEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import routes from '../../../routes';
 import Header from '../../components/header/Header';
 import styles from './MainLayout.module.scss';
 import Footer from 'views/components/footer/Footer';
 
 function MainLayout() {
+  const location = useLocation();
+  // Scroll to top if path changes
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   return (
     <>
       <Header />

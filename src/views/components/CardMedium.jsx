@@ -7,6 +7,7 @@ import { ReactComponent as CandlesticksUp } from 'assets/icons/candlesticks-up.s
 import { ReactComponent as Heart } from 'assets/icons/heart.svg';
 import { ReactComponent as ScatterUp } from 'assets/icons/scatter-up.svg';
 import CustomLabel from 'views/components/shared/CustomLabel';
+import scrollToSection from 'hooks/useScrollToSection';
 
 function CardMedium({ id, title, instaPrice, stockAmount, bid, isNewBids, imgSrc }) {
   const [isHovered, setIsHovered] = useState(false)
@@ -35,7 +36,7 @@ function CardMedium({ id, title, instaPrice, stockAmount, bid, isNewBids, imgSrc
               <Heart />
             </button>
           </div>
-          <div className='card-hover--button'>
+          <div className='card-hover--button' onClick={() => scrollToSection('discover')}>
             <Button
               text='Place a bid'
               path={'/item/' + id}
