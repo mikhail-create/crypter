@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react'
 import CardMedium from 'views/components/CardMedium'
 import Button from 'views/components/shared/Button'
@@ -20,7 +21,7 @@ function UploadSinglePage() {
   const [royalties, setRoyalties] = useState('');
   const [size, setSize] = useState('');
   const [property, setProperty] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false) // ИЗМЕНИТЬ
 
   useEffect(() => {
     // При открытии модального окна добавляем стиль "overflow: hidden" к body
@@ -137,7 +138,8 @@ function UploadSinglePage() {
                 Instant sale price
               </label>
               <span className='font-caption--2'>
-                Enter the price for which the item will be instantly sold                            </span>
+                Enter the price for which the item will be instantly sold
+              </span>
             </div>
             <ToggleButton />
           </div>
@@ -147,7 +149,8 @@ function UploadSinglePage() {
                 Unlock once purchased
               </label>
               <span className='font-caption--2'>
-                Content will be unlocked after successful transaction                            </span>
+                Content will be unlocked after successful transaction
+              </span>
             </div>
             <ToggleButton />
           </div>
@@ -171,7 +174,7 @@ function UploadSinglePage() {
           </div>
         </div>
         <div className='item--actions'>
-          <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight />} />
+          <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight fill='white' />} />
           {
             isSaving &&
             <div className='item--actions--saving'>
@@ -179,7 +182,7 @@ function UploadSinglePage() {
                 Auto saving
               </span>
               <div className='item--actions--spinner'>
-                <Loading fill='black'/>
+                <Loading fill='black' />
               </div>
             </div>
           }
@@ -200,6 +203,9 @@ function UploadSinglePage() {
             Clear all
           </span>
         </div>
+      </div>
+      <div className='item--actions-mobile'>
+        <Button text='Create item' size='Medium' isColored={true} icon={<ArrowRight fill='white' />} />
       </div>
     </div>
   )

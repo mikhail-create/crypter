@@ -1,71 +1,72 @@
 .upload-modal {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba($neutral-1, 0.9);
-    z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba($neutral-1, 0.9);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-content {
+    width: 91.5%;
+    max-width: 448px;
+    height: 536px;
+    border-radius: 20px;
+    background-color: $neutral-8;
+    box-sizing: border-box;
+    padding: 32px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
 
-    .modal-content {
-        width: 448px;
-        height: 536px;
-        border-radius: 20px;
-        background-color: $neutral-8;
-        box-sizing: border-box;
-        padding: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+    &--header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
 
-        &--header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-
-            .close:hover {
-                cursor: pointer;
-            }
-        }
-
-        &--item {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-
-            .conent-item {
-                display: flex;
-                flex-direction: row;
-                gap: 20px;
-
-                &--icon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 100%;
-                    width: 48px;
-                    height: 48px;
-                    background-color: $neutral-6;
-                }
-
-                .done {
-                    background-color: $primary-green;
-                }
-
-                &--info {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-
-                    > span:nth-child(2) {
-                        color: $neutral-4;
-                    }
-                }
-            }
-        }
+      .close:hover {
+        cursor: pointer;
+      }
     }
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .conent-item {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        &--icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+          width: 48px;
+          height: 48px;
+          background-color: $neutral-6;
+        }
+
+        .done {
+          background-color: $primary-green;
+        }
+
+        &--info {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          > span:nth-child(2) {
+            color: $neutral-4;
+          }
+        }
+      }
+    }
+  }
 }

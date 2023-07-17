@@ -54,8 +54,8 @@ function DropZone({ accept, maxSize, onFileUpload }) {
         <label className='font-caption--2'>
           {
             accept.split(', ').map(extension => extension.toUpperCase().replace('.', '')).join(', ')
-                        + ' '
-                        + 'Max ' + maxSize
+            + ' '
+            + 'Max ' + maxSize
           }
         </label>
       </div>

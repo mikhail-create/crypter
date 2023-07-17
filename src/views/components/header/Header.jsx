@@ -53,11 +53,13 @@ function Header() {
         <div className="header-menu--item font-body--1-bold" onClick={() => scrollToSection('discover')}>
           Discover
         </div>
-        <div className="header-menu--item font-body--1-bold">How it work</div>
-        <div className="header-menu--item font-body--1-bold">
+        <div onClick={toggleMenu} className="header-menu--item font-body--1-bold">
+          How it work
+        </div>
+        <div onClick={toggleMenu} className="header-menu--item font-body--1-bold">
           <Link to="upload">Upload</Link>
         </div>
-        <div className="header-menu--item font-body--1-bold">
+        <div onClick={toggleMenu} className="header-menu--item font-body--1-bold">
           <Link to="Connect">Connect Wallet</Link>
         </div>
       </div>
