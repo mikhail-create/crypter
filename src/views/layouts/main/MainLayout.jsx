@@ -4,6 +4,7 @@ import routes from '../../../routes';
 import Header from '../../components/header/Header';
 import styles from './MainLayout.module.scss';
 import Footer from 'views/components/footer/Footer';
+import LoadingPage from 'views/pages/LoadingPage';
 
 function MainLayout() {
   const location = useLocation();
@@ -16,7 +17,7 @@ function MainLayout() {
       <Header />
       <main>
         <div className={styles.layout}>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<LoadingPage />}>
             <Routes>
               {routes.map(route => (
                 <Route
