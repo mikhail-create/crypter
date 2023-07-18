@@ -7,18 +7,18 @@ const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => {
     console.log(theme);
-    setTheme((theme) => (theme === 'light' ? 'dark' : 'light'));
+    setTheme((theme) => (theme === 'dark' ? 'light' : 'dark'));
   }
 
   useLayoutEffect(() => {
     localStorage.setItem('theme', theme);
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark-mode');
-      document.documentElement.classList.add('light-mode');
-    } else {
-      document.documentElement.classList.remove('light-mode');
-      document.documentElement.classList.add('dark-mode');
-    }
+    // if (theme === 'light') {
+    //   document.documentElement.classList.remove('dark-mode');
+    //   document.documentElement.classList.add('light-mode');
+    // } else {
+    //   document.documentElement.classList.remove('light-mode');
+    //   document.documentElement.classList.add('dark-mode');
+    // }
   }, [theme]);
 
   return (
