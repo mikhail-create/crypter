@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import Logo from 'assets/logo_horizontal.png'
 import Avatar from 'assets/avatar.png'
 import { ReactComponent as Menu } from 'assets/icons/menu.svg'
+import { ReactComponent as Lamp } from 'assets/icons/lamp.svg'
 import SearchBar from './SearchBar'
 import Notification from './Notification'
 import Button from 'views/components/shared/Button'
 import scrollToSection from 'hooks/useScrollToSection'
 import { Link } from 'react-router-dom'
+import { useTheme } from 'ThemeContext'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { toggleTheme } = useTheme()
 
   const toggleMenu = () => {
     setIsMenuOpen(prevState => !prevState);
@@ -25,8 +29,8 @@ function Header() {
             </div>
           </div>
           <div className="left--divider" />
-          <div className="left--link font-button font-button--2">
-            <a onClick={() => scrollToSection('discover')}>Discover</a>
+          <div className="left--link font-button font-button--2" onClick={() => scrollToSection('discover')}>
+            Discover
           </div>
           <div className="left--link font-button font-button--2">How it work</div>
         </div>
@@ -42,6 +46,9 @@ function Header() {
           </div>
           <div className={`layout-right--menu ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
             <Menu />
+          </div>
+          <div onClick={toggleTheme}>
+            <Lamp />
           </div>
           <div className="layout-right--buttons">
             <Button path="upload" text="Upload" isColored={true} />

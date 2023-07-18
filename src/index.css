@@ -1,0 +1,14 @@
+.light-mode {
+  --font-color: #141416;
+  --body-bg-color: #FCFCFD;
+}
+
+.dark-mode {
+  --font-color: #FCFCFD;
+  --body-bg-color: #141416;
+}
+
+* {
+  background-color: var(--body-bg-color);
+  color: var(--font-color);
+}
