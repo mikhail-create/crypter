@@ -11,6 +11,10 @@
   justify-content: center;
   transition: 500ms;
 
+  &:visited {
+    color: $neutral-2;
+  }
+
   &-icon {
     display: flex;
     height: 100%;
@@ -20,7 +24,6 @@
   &--medium {
     height: 48px;
     padding: 0 24px;
-
   }
 
   &--small {
@@ -32,6 +35,10 @@
     color: $neutral-8;
     background-color: $primary-blue;
     border: none;
+
+    &:visited {
+      color: $neutral-8;
+    }
   }
 
   &--disabled {
